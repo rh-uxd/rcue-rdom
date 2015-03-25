@@ -1,0 +1,21 @@
+{
+  "name": "rcue-rdom",
+  "version": "0.0.0",
+  "homepage": "https://github.com/patternfly/rcue-rdom",
+  "authors": [
+    "Robb Hamilton <rhamilto@redhat.com>"
+  ],
+  "license": "Apache 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4",
+    "rcue": "/Users/rhamilto/Sites/rcue#4a07756"
+  }
+}

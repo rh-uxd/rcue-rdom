@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+  <head>
+    <title>Roles Assigned - Red Hat&reg; Openstack Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../bower_components/rcue/dist/img/favicon.ico">
+    <link href="../dist/css/rcue-rdom.min.css" rel="stylesheet" media="screen, print">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../bower_components/rcue/components/patternfly/components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../bower_components/rcue/components/patternfly/components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <!-- IE8 requires jQuery and Bootstrap JS to load in head to prevent rendering bugs -->
+    <!-- IE8 requires jQuery v1.x -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      /*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
+      $.widget.bridge('uibutton', $.ui.button);
+      $.widget.bridge('uitooltip', $.ui.tooltip);
+    </script>
+    <script src="../bower_components/rcue/components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/rcue/components/patternfly/components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="../bower_components/rcue/components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="../bower_components/rcue/components/patternfly/dist/js/patternfly.min.js"></script>
+    <script src="../dist/js/rcue-rdom.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="../dist/img/brand.svg" alt="Red Hat&reg; Openstack Manager" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Link</a>
+              </li>
+              <li>
+                <a href="#">Another link</a>
+              </li>
+              <li>
+                <a href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active">
+            <a href="basic.html" class="active">Overview</a>
+          </li>
+          <li>
+            <a href="bootstrap-treeview-2.html">Service Configuration</a>
+          </li>
+          <li>
+            <a href="dashboard.html">Deployment Roles</a>
+          </li>
+          <li>
+            <a href="form.html">Nodes</a>
+          </li>
+          <li>
+            <a href="tab.html">Ready State Profiles</a>
+          </li>
+          <li>
+            <a href="typography-2.html">Provisioning Images</a>
+          </li>
+          <li>
+            <a href="typography-2.html">Deployment Log</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+    <div class="row title-bar">
+      <div class="col-sm-7 col-md-8">
+        <h1 data-toggle="tooltip" data-placement="bottom" data-trigger="click" title="Foo.">My Openstack Deployment</h1>
+        <a href="#" class="edit-config">Edit Global Configuration</a>
+      </div>
+      <div class="col-sm-5 col-md-4 buttons">
+        <a class="btn btn-default" href="#" role="button"><i class="fa fa-plus"></i> Register Nodes</a>
+        <a class="btn btn-default" href="#" role="button">Configure Networks</a>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr />
+          <div class="deployment-checklist-wrapper">
+            <div class="deployment-checklist" data-spy="affix" data-offset-top="141">
+              <h2 class="h3">Ready to Deploy</h2>
+              <p class="deployment-steps-status"><a data-toggle="collapse" href="#deployment-steps" aria-expanded="true" aria-controls="deployment-steps">4 of 4 Steps Completed</a></p>
+              <ol id="deployment-steps" class="collapse in">
+                <li class="complete">Register Nodes</li>
+                <li class="complete">Configure Networks</li>
+                <li class="complete">Configure Roles</li>
+                <li class="complete">Assign Roles
+                  <ul>
+                    <li class="complete">1 Controller Needed</li>
+                    <li class="complete">1 Compute Needed</li>
+                    <li class="complete">1 Storage Needed</li>
+                  </ul>
+                </li>
+              </ol>
+              <button class="btn btn-default btn-primary" type="submit">Verify and Deploy</button>
+            </div>
+          </div>
+          <h2>Available Deployment Roles</h2>
+          <p>All roles have been assigned.</p>
+        </div><!-- /col -->
+      </div><!-- /row -->
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <h2>Hardware</h2>
+          <div class="node-profile">
+            <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 16 GB of Memory, 2 TB of Disk</h3>
+            <div class="row">
+              <div class="col-sm-5 col-md-5">
+                <ul class="deployment-roles deployment-roles-assigned">
+                  <li class="role-compute">
+                    <div class="deployement-role-label">
+                      Compute
+                    </div>
+                    <select id="role-compute-count">
+                      <option>1</option>
+                      <option>3</option>
+                      <option>5</option>
+                      <option>7</option>
+                      <option>9</option>
+                      <option>11</option>
+                      <option>13</option>
+                      <option>15</option>
+                      <option selected>17</option>
+                      <option>19</option>
+                    </select>
+                    <a href="#" class="role-option delete">
+                      <i class="fa fa-times"></i>
+                    </a>
+                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                    <a href="#" class="role-option configure">
+                      <i class="fa fa-cogs"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div class="role-target dropdown">
+                  <a href="#" id="role-target-dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-1">
+                    <li>
+                      <a href="#">Controller</a>
+                    </li>
+                    <li>
+                      <a href="#">Compute</a>
+                    </li>
+                    <li>
+                      <a href="#">Block Storage</a>
+                    </li>
+                    <li>
+                      <a href="#">Object Storage</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-7 col-md-7">
+                <ul class="nodes">
+                  <li class="node node-compute">
+                    <div class="node node-compute"></div>
+                    <div class="node node-compute">
+                      <div class="node-label">
+                        Compute
+                      </div>
+                      <div class="node-count">
+                        17 Nodes
+                      </div>
+                    </div>
+                  </li>
+                  <li class="node node-free">
+                    <div class="node-label">
+                      Free
+                    </div>
+                    <div class="node-count">
+                      2 Node
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="node-profile">
+            <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 2 GB of Memory, 1 TB of Disk</h3>
+            <div class="row">
+              <div class="col-sm-5 col-md-5">
+                <ul class="deployment-roles deployment-roles-assigned">
+                  <li class="role-controller">
+                    <div class="deployement-role-label">
+                      Controller
+                    </div>
+                    <select id="role-compute-count">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option selected>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                    </select>
+                    <a href="#" class="role-option delete">
+                      <i class="fa fa-times"></i>
+                    </a>
+                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                    <a href="#" class="role-option configure">
+                      <i class="fa fa-cogs"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div class="role-target dropdown">
+                  <a href="#" id="role-target-dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-2">
+                    <li>
+                      <a href="#">Controller</a>
+                    </li>
+                    <li>
+                      <a href="#">Compute</a>
+                    </li>
+                    <li>
+                      <a href="#">Block Storage</a>
+                    </li>
+                    <li>
+                      <a href="#">Object Storage</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-7 col-md-7">
+                <ul class="nodes">
+                  <li class="node node-controller">
+                    <div class="node node-controller"></div>
+                    <div class="node node-controller">
+                      <div class="node-label">
+                        Controller
+                      </div>
+                      <div class="node-count">
+                        5 Nodes
+                      </div>
+                    </div>
+                  </li>
+                  <li class="node node-free">
+                    <div class="node node-free">
+                      <div class="node-label">
+                        Free
+                      </div>
+                      <div class="node-count">
+                        2 Nodes
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="node-profile">
+            <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 4 GB of Memory, 40 TB of Disk</h3>
+            <div class="row">
+              <div class="col-sm-5 col-md-5">
+                <ul class="deployment-roles deployment-roles-assigned">
+                  <li class="role-block">
+                    <div class="deployement-role-label">
+                      Block Storage
+                    </div>
+                    <select id="role-compute-count">
+                      <option>1</option>
+                      <option selected>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                    <a href="#" class="role-option delete">
+                      <i class="fa fa-times"></i>
+                    </a>
+                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                    <a href="#" class="role-option configure">
+                      <i class="fa fa-cogs"></i>
+                    </a>
+                  </li>
+                  <li class="role-object">
+                    <div class="deployement-role-label">
+                      Object Storage
+                    </div>
+                    <select id="role-compute-count">
+                      <option selected>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                    <a href="#" class="role-option delete">
+                      <i class="fa fa-times"></i>
+                    </a>
+                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                    <a href="#" class="role-option configure">
+                      <i class="fa fa-cogs"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div class="role-target dropdown">
+                  <a href="#" id="role-target-dropdown-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-3">
+                    <li>
+                      <a href="#">Controller</a>
+                    </li>
+                    <li>
+                      <a href="#">Compute</a>
+                    </li>
+                    <li>
+                      <a href="#">Block Storage</a>
+                    </li>
+                    <li>
+                      <a href="#">Object Storage</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-7 col-md-7">
+                <ul class="nodes">
+                  <li class="node node-block">
+                    <div class="node node-block">
+                      <div class="node-label">
+                        Block
+                      </div>
+                      <div class="node-count">
+                        2 Nodes
+                      </div>
+                    </div>
+                  </li>
+                  <li class="node node-object">
+                    <div class="node-label">
+                      Object
+                    </div>
+                    <div class="node-count">
+                      1 Nodes
+                    </div>
+                  </li>
+                  <li class="node node-free">
+                    <div class="node node-free"></div>
+                    <div class="node node-free">
+                      <div class="node-label">
+                        Free
+                      </div>
+                      <div class="node-count">
+                        3 Nodes
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-5">
+          <!-- a network topology is planned for this space -->
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

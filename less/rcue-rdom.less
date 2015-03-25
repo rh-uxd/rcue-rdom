@@ -1,0 +1,391 @@
+/* Red Hat Openstack Manager */
+
+// RCUE
+@import "../bower_components/rcue/less/rcue.less";
+
+// RCUE overrides
+@import "variables"; 
+
+
+.deployment-checklist {
+  background: @deployment-checklist-bg-color-fallback;
+  background: @deployment-checklist-bg-color;
+  border: 1px solid @gray-lighter;
+  min-width: 200px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  z-index: 10;
+  @media (min-width: 1010px) {
+    &.affix {
+      position: fixed;
+      right: 20px;
+      top: 10px;
+    }
+    &.affix-top {
+      position: absolute;
+    }
+  }
+  #deployment-steps {
+    padding-left: 31px;
+    margin-top: -5px;
+    .active {
+      font-weight: 700;
+    }
+    .complete {
+      color: @gray;
+      list-style: none;
+      position: relative;
+      &:before {
+        color: @brand-success;
+        content: '\f00c';
+        font-family: @icon-font-name-fa;
+        position: absolute;
+        left: -18px;
+        top: 1px;
+      }
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 6px;
+      padding-top: 5px;
+    }
+  }
+  .deployment-steps-status {
+    font-weight: 600;
+    a {
+      color: @gray;
+      padding-left: 14px;
+      position: relative;
+      &:before {
+        border: 4px solid transparent;
+        border-top-color: @gray;
+        content: '';
+        height: 0;
+        left: 1px;
+        position: absolute;
+        top: 7px;
+        width: 0;
+      }
+      &.collapsed:before {
+        border-left-color: @gray;
+        border-top-color: transparent;
+        left: 3px;
+        top: 5px;
+      }
+      &:focus, &:hover {
+        color: @gray;
+        text-decoration: none;
+      }
+    }
+  }
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.deployment-checklist-wrapper {
+  clear: left;
+  position: relative;
+}
+
+.deployment-roles {
+  float: left;
+  list-style: none;
+  margin: 5px 0 0;
+  padding: 0;
+  width: 100%;
+  &.deployment-roles-assigned {
+    float: none;
+    > li {
+      float: none;
+      margin-right: 0;
+      min-width: 0;
+      &:hover {
+        .role-option {
+          &.configure, &.delete {
+            display: block;
+          }
+          &.edit {
+            top: 15px;
+          }
+        }
+      }
+      select {
+        display: inline;
+      }
+    }
+  }
+  > li {
+    background: @deployment-role-bg-color;
+    border: 2px solid @deployment-role-border-color;
+    border-radius: @border-radius-base;
+    float: left;
+    margin: 0 10px 10px 0;
+    min-width: 150px;
+    padding: 6px 20px;
+    position: relative;
+    text-align: center;
+    z-index: 9;
+    &:before {
+      border: 6px solid @deployment-role-border-color;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+    &:hover {
+      cursor: move;
+      .role-option.edit {
+        display: block;
+      }
+    }
+    &.role-block {
+      border-color: @deployment-role-block-border-color;
+      &:before {
+        border-left-color: @deployment-role-block-border-color;
+        border-top-color: @deployment-role-block-border-color;
+      }
+    }
+    &.role-compute {
+      border-color: @deployment-role-compute-border-color;
+      &:before {
+        border-left-color: @deployment-role-compute-border-color;
+        border-top-color: @deployment-role-compute-border-color;
+      }
+    }
+    &.role-controller {
+      border-color: @deployment-role-controller-border-color;
+      &:before {
+        border-left-color: @deployment-role-controller-border-color;
+        border-top-color: @deployment-role-controller-border-color;
+      }
+    }
+    &.role-object {
+      border-color: @deployment-role-object-border-color;
+      &:before {
+        border-left-color: @deployment-role-object-border-color;
+        border-top-color: @deployment-role-object-border-color;
+      }
+    }
+    &.role-unconfigured {
+      background-color: @deployment-role-unconfigured-bg-color !important;
+      border-color: @deployment-role-unconfigured-border-color !important;
+      color: @deployment-role-unconfigured-color !important;
+      cursor: auto;
+      &:before {
+        border-left-color: @deployment-role-unconfigured-border-color !important;
+        border-top-color: @deployment-role-unconfigured-border-color !important;
+      }
+    }
+    .pficon-help {
+      cursor: pointer;
+      font-size: @font-size-large;
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      &:hover {
+        color: @gray;
+      }
+    }
+    .role-option {
+      display: none;
+      font-size: @font-size-large;
+      position: absolute;
+      right: 10px;
+      &.configure {
+        top: 32px;
+      }
+      &.delete {
+        top: -2px;
+      }
+      &.edit {
+        top: 5px; // 15px
+      }
+    }
+    select {
+      display: none;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.modal .nav-tabs-pf + .tab-content {
+  margin-top: 30px;
+}
+
+.node-profile {
+  background: @node-profile-bg-color;
+  border: 1px solid @node-profile-border-color;
+  border-radius: @border-radius-base;
+  margin: 0 0 20px;
+  padding: 15px;
+  h3 {
+    margin-bottom: 20px;
+    margin-top: 0;
+    strong {
+      font-weight: 600;
+    }
+  }
+}
+
+.node {
+  border-style: solid;
+  border-radius: @border-radius-base;
+  border-width: 2px;
+  float: left;
+  margin: 0 50px 70px 0;
+  min-height: 75px;
+  min-width: 75px;
+  padding: 25px 0;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  &:before {
+    border: 6px solid transparent;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+  &.node-block {
+    background: @node-block-bg-color;
+    border-color: @node-block-border-color;
+    &:before {
+      border-left-color: @node-block-border-color;
+      border-top-color: @node-block-border-color;
+    }
+  }
+  &.node-compute {
+    background: @node-compute-bg-color;
+    border-color: @node-compute-border-color;
+    &:before {
+      border-left-color: @node-compute-border-color;
+      border-top-color: @node-compute-border-color;
+    }
+  }
+  &.node-controller {
+    background: @node-controller-bg-color;
+    border-color: @node-controller-border-color;
+    &:before {
+      border-left-color: @node-controller-border-color;
+      border-top-color: @node-controller-border-color;
+    }
+  }
+  &.node-discovering {
+    background: @node-discovering-bg-color;
+    border-color: @node-discovering-border-color;
+    padding: 16px 0;
+    margin: 0 10px 10px 0;
+    &:before {
+      border-left-color: @node-discovering-border-color;
+      border-top-color: @node-discovering-border-color;
+    }
+    .node-label {
+      color: @gray;
+      font-size: @font-size-small;
+      font-weight: 500;
+    }
+  }
+  &.node-free {
+    background: @node-free-bg-color;
+    border-color: @node-free-border-color;
+    &:before {
+      border-left-color: @node-free-border-color;
+      border-top-color: @node-free-border-color;
+    }
+  }
+  &.node-object {
+    background: @node-object-bg-color;
+    border-color: @node-object-border-color;
+    &:before {
+      border-left-color: @node-object-border-color;
+      border-top-color: @node-object-border-color;
+    }
+  }
+  .node-count {
+    bottom: -26px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .node-label {
+    color: #fff;
+    font-weight: 600;
+  }
+  > .node {
+    left: 8px;
+    position: absolute;
+    top: 8px;
+    z-index: 2;
+    + .node {
+      left: 18px;
+      top: 18px;
+      z-index: 3;
+    }
+  }
+}
+
+.nodes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.role-target {
+  background: @deployment-role-bg-color;
+  border: 2px dashed @deployment-role-border-color;
+  border-radius: @border-radius-base;
+  font-size: 16px;
+  margin: 0 0 25px;
+  > a {
+    display: block;
+    text-align: center;
+  }
+}
+
+.title-bar {
+  .btn {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .edit-config {
+    margin-bottom: 10px;
+  }
+  h1 {
+    margin-bottom: 5px;
+  }
+  @media (min-width: @screen-sm) {
+    .btn {
+      margin-bottom: 10px;
+      margin-left: 10px;
+      margin-right: 0;
+      margin-top: 23px;
+    }
+    .buttons {
+      text-align: right;
+    }
+  }
+  @media (min-width: 852px) {
+    .edit-config {
+      margin-left: 15px;
+      margin-top: 27px;
+    }
+    h1 {
+      display: inline-block;
+    }
+    + .row hr {
+      margin-top: 5px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "rcue",
+  "authors": "Red Hat",
+  "license": "Apache-2.0",
+  "homepage": "http://rcue-uxd.itos.redhat.com/",
+  "main": [
+    "dist/css/rcue.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests",
+    "package.json",
+    "Gruntfile.js",
+    "Makefile",
+    "rcue.spec.in",
+    "_config.yml"
+  ],
+  "devDependencies": {
+    "patternfly": "git://github.com/patternfly/patternfly"
+  },
+  "private": true,
+  "_release": "4a07756",
+  "_resolution": {
+    "type": "commit",
+    "commit": "4a07756"
+  },
+  "_source": "/Users/rhamilto/Sites/rcue",
+  "_target": "4a07756",
+  "_originalSource": "/Users/rhamilto/Sites/rcue",
+  "_direct": true
+}
