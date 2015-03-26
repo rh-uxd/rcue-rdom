@@ -10452,7 +10452,6 @@ h2,
   position: absolute;
   right: 0;
   top: -5px;
-  z-index: 10;
 }
 @media (min-width: 1010px) {
   .deployment-checklist.affix {
@@ -10469,23 +10468,27 @@ h2,
   margin-top: -5px;
 }
 .deployment-checklist #deployment-steps .active {
-  font-weight: 700;
+  font-weight: 600;
 }
 .deployment-checklist #deployment-steps .complete {
   color: #555555;
-  list-style: none;
-  position: relative;
 }
 .deployment-checklist #deployment-steps .complete:before {
   color: #3f9c35;
-  content: '\f00c';
-  font-family: "FontAwesome";
-  position: absolute;
-  left: -18px;
-  top: 1px;
+  content: '\f046';
 }
 .deployment-checklist #deployment-steps li {
+  list-style: none;
   margin-bottom: 5px;
+  position: relative;
+}
+.deployment-checklist #deployment-steps li:before {
+  color: #999999;
+  content: '\f096';
+  font-family: "FontAwesome";
+  left: -18px;
+  position: absolute;
+  top: 1px;
 }
 .deployment-checklist #deployment-steps ul {
   list-style: none;
@@ -10548,10 +10551,11 @@ h2,
   display: block;
 }
 .deployment-roles.deployment-roles-assigned > li:hover .role-option.edit {
-  top: 15px;
+  top: 17px;
 }
-.deployment-roles.deployment-roles-assigned > li select {
-  display: inline;
+.deployment-roles.deployment-roles-assigned > li .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  margin-bottom: 5px;
+  width: auto;
 }
 .deployment-roles > li {
   background: #ffffff;
@@ -10563,7 +10567,6 @@ h2,
   padding: 6px 20px;
   position: relative;
   text-align: center;
-  z-index: 9;
 }
 .deployment-roles > li:before {
   border: 6px solid #bbbbbb;
@@ -10637,10 +10640,10 @@ h2,
   right: 10px;
 }
 .deployment-roles > li .role-option.configure {
-  top: 32px;
+  top: 36px;
 }
 .deployment-roles > li .role-option.delete {
-  top: -2px;
+  top: 0;
 }
 .deployment-roles > li .role-option.edit {
   top: 5px;

@@ -16,7 +16,6 @@
   position: absolute;
   right: 0;
   top: -5px;
-  z-index: 10;
   @media (min-width: 1010px) {
     &.affix {
       position: fixed;
@@ -31,23 +30,27 @@
     padding-left: 31px;
     margin-top: -5px;
     .active {
-      font-weight: 700;
+      font-weight: 600;
     }
     .complete {
       color: @gray;
-      list-style: none;
-      position: relative;
       &:before {
         color: @brand-success;
-        content: '\f00c';
-        font-family: @icon-font-name-fa;
-        position: absolute;
-        left: -18px;
-        top: 1px;
+        content: '\f046';
       }
     }
     li {
+      list-style: none;
       margin-bottom: 5px;
+      position: relative;
+      &:before {
+        color: @gray-light;
+        content: '\f096';
+        font-family: @icon-font-name-fa;
+        left: -18px;
+        position: absolute;
+        top: 1px;
+      }
     }
     ul {
       list-style: none;
@@ -111,12 +114,13 @@
             display: block;
           }
           &.edit {
-            top: 15px;
+            top: 17px;
           }
         }
       }
-      select {
-        display: inline;
+      .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        margin-bottom: 5px;
+        width: auto;
       }
     }
   }
@@ -130,7 +134,6 @@
     padding: 6px 20px;
     position: relative;
     text-align: center;
-    z-index: 9;
     &:before {
       border: 6px solid @deployment-role-border-color;
       border-bottom-color: transparent;
@@ -202,10 +205,10 @@
       position: absolute;
       right: 10px;
       &.configure {
-        top: 32px;
+        top: 36px;
       }
       &.delete {
-        top: -2px;
+        top: 0;
       }
       &.edit {
         top: 5px; // 15px

@@ -3,7 +3,7 @@
             <div class="deployment-checklist" data-spy="affix" data-offset-top="141">
               <h2 class="h3">Deployment Checklist</h2>
               <p class="deployment-steps-status"><a data-toggle="collapse" href="#deployment-steps" aria-expanded="true" aria-controls="deployment-steps">0 of 4 Steps Completed</a></p>
-              <ol id="deployment-steps" class="collapse in">
+              <ul id="deployment-steps" class="collapse in">
                 <li class="active">Register Nodes</li>
                 <li>Configure Networks</li>
                 <li>Configure Roles</li>
@@ -14,7 +14,7 @@
                     <li>1 Storage Needed</li>
                   </ul>
                 </li>
-              </ol>
+              </ul>
               <button class="btn btn-default btn-primary" type="submit" disabled="disabled">Verify and Deploy</button>
             </div>
           </div>
