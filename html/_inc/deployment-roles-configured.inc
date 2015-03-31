@@ -19,9 +19,6 @@
               <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
                 <i class="fa fa-pencil"></i>
               </a>
-              <a href="#" class="role-option configure">
-                <i class="fa fa-cogs"></i>
-              </a>
             </li>
             <li class="role-compute">
               <div class="deployement-role-label">
@@ -47,9 +44,6 @@
               <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
                 <i class="fa fa-pencil"></i>
               </a>
-              <a href="#" class="role-option configure">
-                <i class="fa fa-cogs"></i>
-              </a>
             </li>
             <li class="role-block">
               <div class="deployement-role-label">
@@ -68,9 +62,6 @@
               <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
                 <i class="fa fa-pencil"></i>
               </a>
-              <a href="#" class="role-option configure">
-                <i class="fa fa-cogs"></i>
-              </a>
             </li>
             <li class="role-object">
               <div class="deployement-role-label">
@@ -88,9 +79,6 @@
               </a>
               <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
                 <i class="fa fa-pencil"></i>
-              </a>
-              <a href="#" class="role-option configure">
-                <i class="fa fa-cogs"></i>
               </a>
             </li>
           </ul>

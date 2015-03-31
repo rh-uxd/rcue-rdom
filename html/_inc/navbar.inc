@@ -44,9 +44,6 @@
             <a href="form.html">Nodes</a>
           </li>
           <li>
-            <a href="tab.html">Ready State Profiles</a>
-          </li>
-          <li>
             <a href="typography-2.html">Provisioning Images</a>
           </li>
           <li>

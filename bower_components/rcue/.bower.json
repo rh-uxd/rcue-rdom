@@ -1,5 +1,6 @@
 {
   "name": "rcue",
+  "version": "1.1.4",
   "authors": "Red Hat",
   "license": "Apache-2.0",
   "homepage": "http://rcue-uxd.itos.redhat.com/",
@@ -23,13 +24,13 @@
     "patternfly": "git://github.com/patternfly/patternfly"
   },
   "private": true,
-  "_release": "4a07756",
+  "_release": "1.1.4",
   "_resolution": {
-    "type": "commit",
-    "commit": "4a07756"
+    "type": "version",
+    "tag": "v1.1.4",
+    "commit": "64e2a3be748fb10f8c06aa5112b852389494565e"
   },
   "_source": "/Users/rhamilto/Sites/rcue",
-  "_target": "4a07756",
-  "_originalSource": "/Users/rhamilto/Sites/rcue",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "/Users/rhamilto/Sites/rcue"
 }
