@@ -1,10 +1,18 @@
 // Red Hat Openstack Manager
 
-$(function () {
+jQuery(function () {
   // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip();
+  jQuery('[data-toggle="tooltip"]').tooltip();
   // Initialize Boostrap-select
-  $('.selectpicker').selectpicker();
+  jQuery('.selectpicker').selectpicker();
   // Make configured deployment roles draggable
-  $('.deployment-roles li:not(.role-unconfigured)').draggable({ stack: ".deployment-roles li" });
+  jQuery('.deployment-roles li:not(.role-unconfigured)').draggable({ 
+    stack: ".deployment-roles li"
+  });
+  // Make .role
+  jQuery('.role-target').droppable({
+    drop: function( event, ui ) {
+      jQuery(this).addClass('ui-state-highlight')
+    }
+  });
 })

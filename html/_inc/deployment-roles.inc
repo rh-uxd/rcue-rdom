@@ -69,7 +69,7 @@
               <div class="deployement-role-label">
                 Object Storage
               </div>
-              <select id="role-block-count">
+              <select id="role-object-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

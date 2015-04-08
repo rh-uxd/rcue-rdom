@@ -5,7 +5,7 @@
 <html>
 <!--<![endif]-->
   <head>
-    <title>Roles Assigned - Red Hat&reg; Openstack Manager</title>
+    <title>Configure Networks - Red Hat&reg; Openstack Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../bower_components/rcue/dist/img/favicon.ico">
     <link href="../dist/css/rcue-rdom.min.css" rel="stylesheet" media="screen, print">
@@ -100,25 +100,109 @@
           <hr />
           <div class="deployment-checklist-wrapper">
             <div class="deployment-checklist" data-spy="affix" data-offset-top="141">
-              <h2 class="h3">Ready to Deploy</h2>
-              <p class="deployment-steps-status"><a data-toggle="collapse" href="#deployment-steps" aria-expanded="true" aria-controls="deployment-steps">4 of 4 Steps Completed</a></p>
+              <h2 class="h3">Deployment Checklist</h2>
+              <p class="deployment-steps-status"><a data-toggle="collapse" href="#deployment-steps" aria-expanded="true" aria-controls="deployment-steps">1 of 4 Steps Completed</a></p>
               <ul id="deployment-steps" class="collapse in">
                 <li class="complete">Register Nodes</li>
-                <li class="complete">Configure Networks</li>
-                <li class="complete">Configure Roles</li>
-                <li class="complete">Assign Roles
+                <li>Configure Networks</li>
+                <li>Configure Roles</li>
+                <li>Assign Roles
                   <ul>
-                    <li class="complete">1 Controller Needed</li>
-                    <li class="complete">1 Compute Needed</li>
-                    <li class="complete">1 Storage Needed</li>
+                    <li>1 Controller Needed</li>
+                    <li>1 Compute Needed</li>
+                    <li>1 Storage Needed</li>
                   </ul>
                 </li>
               </ul>
-              <button class="btn btn-default btn-primary" type="submit">Verify and Deploy</button>
+              <button class="btn btn-default btn-primary" type="submit" disabled="disabled">Verify and Deploy</button>
             </div>
           </div>
           <h2>Available Deployment Roles</h2>
-          <p>All roles have been assigned.</p>
+          <ul class="deployment-roles">
+            <li class="role-controller">
+              <div class="deployement-role-label">
+                Controller
+              </div>
+              <select id="role-controller-count">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+              </select>
+              <a href="#" class="role-option delete">
+                <i class="fa fa-times"></i>
+              </a>
+              <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </li>
+            <li class="role-compute">
+              <div class="deployement-role-label">
+                Compute
+              </div>
+              <select id="role-compute-count">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <a href="#" class="role-option delete">
+                <i class="fa fa-times"></i>
+              </a>
+              <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </li>
+            <li class="role-block">
+              <div class="deployement-role-label">
+                Block Storage
+              </div>
+              <select id="role-block-count">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <a href="#" class="role-option delete">
+                <i class="fa fa-times"></i>
+              </a>
+              <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </li>
+            <!--/ remove 'role-unconfigured' class and i.pficon-help once configured -->
+            <li class="role-object role-unconfigured">
+              <i class="pficon pficon-help" data-toggle="tooltip" data-placement="bottom" title="Please edit this role to fill out any necessary missing configuration."></i>
+              <div class="deployement-role-label">
+                Object Storage
+              </div>
+              <select id="role-object-count">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <a href="#" class="role-option delete">
+                <i class="fa fa-times"></i>
+              </a>
+              <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </li>
+          </ul>
         </div><!-- /col -->
       </div><!-- /row -->
       <div class="row">
@@ -128,31 +212,6 @@
             <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 16 GB of Memory, 2 TB of Disk</h3>
             <div class="row">
               <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles deployment-roles-assigned">
-                  <li class="role-compute">
-                    <div class="deployement-role-label">
-                      Compute
-                    </div>
-                    <select class="selectpicker" id="role-compute-count">
-                      <option>1</option>
-                      <option>3</option>
-                      <option>5</option>
-                      <option>7</option>
-                      <option>9</option>
-                      <option>11</option>
-                      <option>13</option>
-                      <option>15</option>
-                      <option selected>17</option>
-                      <option>19</option>
-                    </select>
-                    <a href="#" class="role-option delete">
-                      <i class="fa fa-times"></i>
-                    </a>
-                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                  </li>
-                </ul>
                 <div class="role-target dropdown">
                   <a href="#" id="role-target-dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-plus"></i>
@@ -175,24 +234,14 @@
               </div>
               <div class="col-sm-7 col-md-7">
                 <ul class="nodes">
-                  <li class="node node-compute">
-                    <div class="node node-compute"></div>
-                    <div class="node node-compute">
-                      <div class="node-label">
-                        Compute
-                      </div>
-                      <div class="node-count">
-                        17 Nodes
-                      </div>
-                    </div>
-                  </li>
                   <li class="node node-free">
+                    <div class="node node-free"></div>
                     <div class="node node-free">
                       <div class="node-label">
                         Free
                       </div>
                       <div class="node-count">
-                        2 Nodes
+                        19 Nodes
                       </div>
                     </div>
                   </li>
@@ -204,28 +253,6 @@
             <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 2 GB of Memory, 1 TB of Disk</h3>
             <div class="row">
               <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles deployment-roles-assigned">
-                  <li class="role-controller">
-                    <div class="deployement-role-label">
-                      Controller
-                    </div>
-                    <select class="selectpicker" id="role-controller-count">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option selected>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                    </select>
-                    <a href="#" class="role-option delete">
-                      <i class="fa fa-times"></i>
-                    </a>
-                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                  </li>
-                </ul>
                 <div class="role-target dropdown">
                   <a href="#" id="role-target-dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-plus"></i>
@@ -248,24 +275,14 @@
               </div>
               <div class="col-sm-7 col-md-7">
                 <ul class="nodes">
-                  <li class="node node-controller">
-                    <div class="node node-controller"></div>
-                    <div class="node node-controller">
-                      <div class="node-label">
-                        Controller
-                      </div>
-                      <div class="node-count">
-                        5 Nodes
-                      </div>
-                    </div>
-                  </li>
                   <li class="node node-free">
+                    <div class="node node-free"></div>
                     <div class="node node-free">
                       <div class="node-label">
                         Free
                       </div>
                       <div class="node-count">
-                        2 Nodes
+                        7 Nodes
                       </div>
                     </div>
                   </li>
@@ -277,43 +294,6 @@
             <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 4 GB of Memory, 40 TB of Disk</h3>
             <div class="row">
               <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles deployment-roles-assigned">
-                  <li class="role-block">
-                    <div class="deployement-role-label">
-                      Block Storage
-                    </div>
-                    <select class="selectpicker" id="role-block-count">
-                      <option>1</option>
-                      <option selected>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <a href="#" class="role-option delete">
-                      <i class="fa fa-times"></i>
-                    </a>
-                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                  </li>
-                  <li class="role-object">
-                    <div class="deployement-role-label">
-                      Object Storage
-                    </div>
-                    <select class="selectpicker" id="role-object-count">
-                      <option selected>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
-                    <a href="#" class="role-option delete">
-                      <i class="fa fa-times"></i>
-                    </a>
-                    <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                  </li>
-                </ul>
                 <div class="role-target dropdown">
                   <a href="#" id="role-target-dropdown-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-plus"></i>
@@ -336,24 +316,6 @@
               </div>
               <div class="col-sm-7 col-md-7">
                 <ul class="nodes">
-                  <li class="node node-block">
-                    <div class="node node-block">
-                      <div class="node-label">
-                        Block
-                      </div>
-                      <div class="node-count">
-                        2 Nodes
-                      </div>
-                    </div>
-                  </li>
-                  <li class="node node-object">
-                    <div class="node-label">
-                      Object
-                    </div>
-                    <div class="node-count">
-                      1 Nodes
-                    </div>
-                  </li>
                   <li class="node node-free">
                     <div class="node node-free"></div>
                     <div class="node node-free">
@@ -361,7 +323,7 @@
                         Free
                       </div>
                       <div class="node-count">
-                        3 Nodes
+                        6 Nodes
                       </div>
                     </div>
                   </li>
@@ -697,6 +659,293 @@
         <button type="button" class="btn btn-primary">Configure Networks</button>
       </div>
     </div>
+  </div>
+</div>
+    <div class="modal fade" id="deployment-role" tabindex="-1" role="dialog" aria-labelledby="deployment-role-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <span class="pficon pficon-close"></span>
+          </button>
+          <h2 class="modal-title" id="deployment-role-label">Edit Deployment Role</h2>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs nav-tabs-pf" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#overall-settings" aria-controls="overall-settings" role="tab" data-toggle="tab">Overall Settings</a>
+              </li>
+              <li role="presentation">
+                <a href="#service-configuration" aria-controls="service-configuration" role="tab" data-toggle="tab">Service Configuration</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="overall-settings">
+                <div class="form-horizontal">
+                  <div class="form-group required">
+                    <label class="col-sm-4 control-label" for="overall-settings-name">Name</label>
+                    <div class="col-sm-8">
+                      <input type="text" id="overall-settings-name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overall-settings-description">Description</label>
+                    <div class="col-sm-8">
+                      <textarea rows="2" id="overall-settings-description" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group required">
+                    <label class="col-sm-4 control-label" for="overall-settings-provisioning-image">Provisioning Image</label>
+                    <div class="col-sm-8">
+                      <select id="overall-settings-provisioning-image" class="form-control selectpicker">
+                        <option value="" disabled selected>Select Provisioning Image</option>
+                        <option>Provisioning Image 1</option>
+                        <option>Provisioning Image 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overall-settings-node-profile">Node Profile</label>
+                    <div class="col-sm-8">
+                      <select id="overall-settings-node-profile" class="form-control selectpicker">
+                        <option value="" disabled selected>Select Node Profile</option>
+                        <option>Node Profile 1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overall-settings-number-of-nodes">Number of Nodes</label>
+                    <div class="col-sm-8">
+                      <input type="text" id="overall-settings-number-of-nodes" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="service-configuration">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-horizontal">
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label">
+                          Setting 1
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 1 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-1" id="service-configuration-radio-1" value="value1" checked> Value 1
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-1" id="service-configuration-radio-2" value="value2"> Value 2
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-2">
+                          Setting 2
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 2 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-2" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-3">
+                          Setting 3
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 3 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-3" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-4">
+                          Setting 4
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 4 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <select id="service-configuration-setting-4" class="form-control selectpicker">
+                            <option selected>value</option>
+                            <option>value 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-5">
+                          Setting 5
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 5 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-5" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-6">
+                          Setting 6
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 6 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-6" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-horizontal">
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label">
+                          Setting 7
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 7 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-2" id="service-configuration-radio-3" value="value1" checked> Value 1
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-2" id="service-configuration-radio-4" value="value2"> Value 2
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-8">
+                          Setting 8
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 8 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-8" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-9">
+                          Setting 9
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 9 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-9" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-10">
+                          Setting 10
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 10 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <select id="service-configuration-setting-10" class="form-control selectpicker">
+                            <option selected>value</option>
+                            <option>value 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-11">
+                          Setting 11
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 11 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-11" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-12">
+                          Setting 12
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 12 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-12" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group" id="service-configuration-advanced-settings" role="tablist" aria-multiselectable="false">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h2 class="panel-title h5">
+                        <a data-toggle="collapse" data-parent="#service-configuration-advanced-settings" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                          Advanced Settings
+                        </a>
+                      </h2>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-horizontal">
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label">
+                                  Setting 13
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 13 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-3" id="service-configuration-radio-5" value="value1" checked> Value 1
+                                  </label>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-3" id="service-configuration-radio-6" value="value2"> Value 2
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label" for="service-configuration-setting-14">
+                                  Setting 14
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 14 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <input type="text" id="service-configuration-setting-14" class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label" for="service-configuration-setting-15">
+                                  Setting 15
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 15 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <input type="text" id="service-configuration-setting-15" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-horizontal">
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label">
+                                  Setting 16
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 16 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-4" id="service-configuration-radio-7" value="value1" checked> Value 1
+                                  </label>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-4" id="service-configuration-radio-8" value="value2"> Value 2
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label" for="service-configuration-setting-17">
+                                  Setting 17
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 17 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <input type="text" id="service-configuration-setting-17" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+      </div>
+    </form>
   </div>
 </div>
   </body>

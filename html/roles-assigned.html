@@ -84,11 +84,13 @@
                     </div>
                   </li>
                   <li class="node node-free">
-                    <div class="node-label">
-                      Free
-                    </div>
-                    <div class="node-count">
-                      2 Node
+                    <div class="node node-free">
+                      <div class="node-label">
+                        Free
+                      </div>
+                      <div class="node-count">
+                        2 Nodes
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -104,7 +106,7 @@
                     <div class="deployement-role-label">
                       Controller
                     </div>
-                    <select class="selectpicker" id="role-compute-count">
+                    <select class="selectpicker" id="role-controller-count">
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -177,7 +179,7 @@
                     <div class="deployement-role-label">
                       Block Storage
                     </div>
-                    <select class="selectpicker" id="role-compute-count">
+                    <select class="selectpicker" id="role-block-count">
                       <option>1</option>
                       <option selected>2</option>
                       <option>3</option>
@@ -195,7 +197,7 @@
                     <div class="deployement-role-label">
                       Object Storage
                     </div>
-                    <select class="selectpicker" id="role-compute-count">
+                    <select class="selectpicker" id="role-object-count">
                       <option selected>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -270,5 +272,8 @@
         </div>
       </div>
     </div><!-- /container -->
+    <!--#include file="_inc/global-configuration-modal.inc" -->
+    <!--#include file="_inc/register-nodes-modal.inc" -->
+    <!--#include file="_inc/configure-networks-modal.inc" -->
   </body>
 </html>

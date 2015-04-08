@@ -32,22 +32,22 @@
         </ul>
         <ul class="nav navbar-nav navbar-primary">
           <li class="active">
-            <a href="basic.html" class="active">Overview</a>
+            <a href="index.html" class="active">Overview</a>
           </li>
           <li>
-            <a href="bootstrap-treeview-2.html">Service Configuration</a>
+            <a href="#">Service Configuration</a>
           </li>
           <li>
-            <a href="dashboard.html">Deployment Roles</a>
+            <a href="#">Deployment Roles</a>
           </li>
           <li>
-            <a href="form.html">Nodes</a>
+            <a href="#">Nodes</a>
           </li>
           <li>
-            <a href="typography-2.html">Provisioning Images</a>
+            <a href="#">Provisioning Images</a>
           </li>
           <li>
-            <a href="typography-2.html">Deployment Log</a>
+            <a href="#">Deployment Log</a>
           </li>
         </ul>
       </div>

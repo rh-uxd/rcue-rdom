@@ -10720,8 +10720,66 @@ h2,
   display: none;
   margin-bottom: 5px;
 }
+.form-control.has-feedback {
+  padding-right: 30px;
+}
+.form-control-feedback {
+  position: absolute;
+  right: 28px;
+  top: 7px;
+}
+.form-group.required > label:after {
+  content: "*";
+  padding-left: 3px;
+}
+.modal.with-table-header-rotated .modal-body {
+  padding-right: 70px;
+}
 .modal .nav-tabs-pf + .tab-content {
   margin-top: 30px;
+}
+.modal .panel-group {
+  margin-top: 20px;
+}
+.modal .panel-title {
+  font-size: 12px;
+}
+.modal .tab-content fieldset legend {
+  font-size: 13px;
+}
+.nav-node-registration {
+  float: right;
+  margin: 0 0 -1px;
+}
+.nav-registered-nodes > li.active:after {
+  border: 10px solid transparent;
+  border-bottom-width: 20px;
+  border-left-color: #00a8e1;
+  border-right-width: 0;
+  border-top-width: 20px;
+  content: '';
+  height: 0;
+  position: absolute;
+  right: -10px;
+  top: 0;
+  width: 0;
+}
+.nav-registered-nodes > li.active .fa-trash-o,
+.nav-registered-nodes > li.active:hover {
+  color: #fff;
+}
+.nav-registered-nodes > li > a {
+  padding-right: 30px;
+}
+.nav-registered-nodes .fa-trash-o {
+  color: #0099d3;
+  font-size: 14px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+.nav-registered-nodes .fa-trash-o:hover {
+  color: #00618a;
 }
 .node-profile {
   background: #f6f6f6;
@@ -10840,16 +10898,72 @@ h2,
   margin: 0;
   padding: 0;
 }
+.nodes-registered-count {
+  margin: 0;
+  padding: 5px 0 0;
+}
+.register-nodes-formset .tab-pane > h4 {
+  margin-top: 5px;
+}
+.register-nodes-formset .tab-pane > h4 + .form-horizontal {
+  margin-top: 20px;
+}
 .role-target {
   background: #ffffff;
   border: 2px dashed #bbbbbb;
   border-radius: 1px;
   font-size: 16px;
   margin: 0 0 25px;
+  padding: 3px 0;
 }
 .role-target > a {
   display: block;
   text-align: center;
+}
+.table-header-rotated {
+  border-collapse: collapse;
+}
+.table-header-rotated td {
+  border-left: 1px solid #d1d1d1;
+  border-top: 0 !important;
+  text-align: center;
+  width: 30px;
+}
+.table-header-rotated th {
+  border: 0 !important;
+}
+.table-header-rotated th[colspan] {
+  text-align: center;
+}
+.table-header-rotated th.rotate {
+  height: 70px;
+  white-space: nowrap;
+}
+.ie8 .table-header-rotated th.rotate {
+  height: auto;
+  white-space: normal;
+}
+.table-header-rotated th.rotate > div {
+  transform: translate(8px, 18px) rotate(-45deg);
+  width: 30px;
+}
+.ie8 .table-header-rotated th.rotate > div {
+  width: auto;
+}
+.table-header-rotated th.rotate > div span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100px;
+}
+.ie8 .table-header-rotated th.rotate > div span {
+  width: auto;
+}
+.table-header-rotated th.row-header {
+  font-weight: 500;
+}
+.table-header-rotated thead {
+  background: none;
 }
 .title-bar .btn {
   margin-right: 10px;
@@ -10883,4 +10997,11 @@ h2,
   .title-bar + .row hr {
     margin-top: 5px;
   }
+}
+.upload-nodes {
+  border-bottom: 1px solid #e9e8e8;
+  border-top: 1px solid #e9e8e8;
+  clear: right;
+  margin: 0 0 15px;
+  padding: 15px 0 0;
 }

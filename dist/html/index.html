@@ -64,22 +64,22 @@
         </ul>
         <ul class="nav navbar-nav navbar-primary">
           <li class="active">
-            <a href="basic.html" class="active">Overview</a>
+            <a href="index.html" class="active">Overview</a>
           </li>
           <li>
-            <a href="bootstrap-treeview-2.html">Service Configuration</a>
+            <a href="#">Service Configuration</a>
           </li>
           <li>
-            <a href="dashboard.html">Deployment Roles</a>
+            <a href="#">Deployment Roles</a>
           </li>
           <li>
-            <a href="form.html">Nodes</a>
+            <a href="#">Nodes</a>
           </li>
           <li>
-            <a href="typography-2.html">Provisioning Images</a>
+            <a href="#">Provisioning Images</a>
           </li>
           <li>
-            <a href="typography-2.html">Deployment Log</a>
+            <a href="#">Deployment Log</a>
           </li>
         </ul>
       </div>
@@ -87,11 +87,11 @@
     <div class="container-fluid">
     <div class="row title-bar">
       <div class="col-sm-7 col-md-8">
-        <h1 data-toggle="tooltip" data-placement="bottom" data-trigger="click" title="Foo.">My Openstack Deployment</h1>
-        <a href="#" class="edit-config">Edit Global Configuration</a>
+        <h1>My Openstack Deployment</h1>
+        <a href="#" class="edit-config" data-toggle="modal" data-target="#global-configuration">Edit Global Configuration</a>
       </div>
       <div class="col-sm-5 col-md-4 buttons">
-        <a class="btn btn-default" href="#" role="button"><i class="fa fa-plus"></i> Register Nodes</a>
+        <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#register-nodes"><i class="fa fa-plus"></i> Register Nodes</a>
         <a class="btn btn-default disabled" href="#" role="button">Configure Networks</a>
       </div>
     </div>
@@ -188,7 +188,7 @@
               <div class="deployement-role-label">
                 Object Storage
               </div>
-              <select id="role-block-count">
+              <select id="role-object-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -208,7 +208,7 @@
       <div class="row">
         <div class="col-sm-6 col-md-6">
           <h2>Hardware</h2>
-          <p>There are no nodes currently registered.  <a href="#">Register Nodes</a>
+          <p>There are no nodes currently registered.  <a href="#" data-toggle="modal" data-target="#register-nodes">Register Nodes</a>
         </div>
         <div class="col-sm-6 col-md-5">
           <!-- a network topology is planned for this space -->
@@ -218,7 +218,7 @@
       <div class="row">
         <div class="col-sm-6 col-md-6">
           <hr>
-          <h2 class="h5">Additional HTML/CSS templates for Red Hat Openstack Manager</h6>
+          <h2 class="h5">Additional HTML/CSS templates for Red Hat Openstack Manager</h2>
           <ul>
             <li>
               <a href="nodes-in-discovery.html">Nodes in Discovery</a>
@@ -233,84 +233,546 @@
         </div>
       </div>
     </div><!-- /container -->
-    <div class="modal fade" id="deployment-role" tabindex="-1" role="dialog" aria-labelledby="deployment-role-label" aria-hidden="true">
+    <div class="modal fade" id="global-configuration" tabindex="-1" role="dialog" aria-labelledby="global-configuration-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
           <span class="pficon pficon-close"></span>
         </button>
-        <h4 class="modal-title" id="deployment-role-label">Edit Deployment Role</h4>
+        <h2 class="modal-title" id="global-configuration-label">Edit Global Configuration</h2>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs nav-tabs-pf" role="tablist">
-          <li role="presentation" class="active">
-            <a href="#overall-settings" aria-controls="overall-settings" role="tab" data-toggle="tab">Overall Settings</a>
-          </li>
-          <li role="presentation">
-            <a href="#service-configuration" aria-controls="service-configuration" role="tab" data-toggle="tab">Service Configuration</a>
-          </li>
-        </ul>
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="overall-settings">
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="overall-settings-name">Name *</label>
-                <div class="col-sm-8">
-                  <input type="text" id="overall-settings-name" class="form-control"></div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="overall-settings-description">Description</label>
-                <div class="col-sm-8">
-                  <textarea rows="2" id="overall-settings-description" class="form-control"></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="overall-settings-provisioning-image">Provisioning Image *</label>
-                <div class="col-sm-8">
-                  <select id="overall-settings-provisioning-image" class="form-control selectpicker">
-                    <option value="" disabled selected>Select Provisioning Image</option>
-                    <option>Provisioning Image 1</option>
-                    <option>Provisioning Image 2</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="overall-settings-ready-state">Ready State *</label>
-                <div class="col-sm-8">
-                  <select id="overall-settings-ready-state" class="form-control selectpicker">
-                    <option>Default Ready State</option>
-                    <option>Other Ready State</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="overall-settings-node-profile">Node Profile</label>
-                <div class="col-sm-8">
-                  <select id="overall-settings-node-profile" class="form-control selectpicker">
-                    <option value="" disabled selected>Select Node Profile</option>
-                    <option>Node Profile 1</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="overall-settings-number-of-nodes">Number of Nodes</label>
-                <div class="col-sm-8">
-                  <input type="text" id="overall-settings-number-of-nodes" class="form-control">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="service-configuration">
-            [service configuration form goes here]
-          </div>
-        </div>
+        [Edit Global Configuration]
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
+  </div>
+</div>
+    <div class="modal fade" id="register-nodes" tabindex="-1" role="dialog" aria-labelledby="register-nodes-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          <span class="pficon pficon-close"></span>
+        </button>
+        <h2 class="modal-title" id="register-nodes-label">Register Nodes</h2>
+      </div>
+      <div class="modal-body">
+        <div class="row register-nodes-formset" id="formset-register_nodes">
+          <div class="col-xs-5">
+            <ul class="nav nav-tabs nav-node-registration" role="tablist" id="add-nodes">
+              <li role="presentation" class="active">
+                <a href="#upload-nodes" aria-controls="upload-nodes" role="tab" data-toggle="tab" title="Upload node">
+                  <i class="fa fa-upload"></i>
+                </a>
+              </li>
+              <li role="presentation">
+                <a class="add-node-link" href="#" title="Add node">
+                  <i class="fa fa-plus"></i>
+                </a>
+              </li>
+            </ul>
+            <h3 class="nodes-registered-count">2 Nodes</h3>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active upload-nodes" id="upload-nodes">
+                <form>
+                  <div class="form-group required">
+                    <input id="id_csv_file" name="csv_file" type="file">
+                  </div>
+                  <div class="form-group">
+                    <button type="button" class="btn btn-sm btn-default">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-primary">Upload Nodes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked nav-registered-nodes">
+              <li class="active">
+                <a href="#tab-register_nodes-0" data-toggle="tab">Undefined node</a>
+                <i class="fa fa-trash-o"></i>
+              </li>
+              <li class="">
+                <a href="#tab-register_nodes-1" data-toggle="tab">Undefined node</a>
+                <i class="fa fa-trash-o"></i>
+              </li>
+            </ul>
+          </div>
+          <form>
+            <div class="col-xs-7">
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab-register_nodes-0">
+                  <h4>Node Detail</h4>
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <legend>Management</legend>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-driver">Driver</label>
+                        <div class="col-xs-6">
+                          <select class="form-control" id="id_register_nodes-0-driver" name="register_nodes-0-driver">
+                            <option value="pxe_ipmitool">IPMI Driver</option>
+                            <option value="pxe_ssh">PXE + SSH</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-ipmi_address">IP Address</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-0-ipmi_address" name="register_nodes-0-ipmi_address" type="text">
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-xs-4" for="id_register_nodes-0-ipmi_username">IPMI User</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-0-ipmi_username" name="register_nodes-0-ipmi_username" type="text">
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-xs-4" for="id_register_nodes-0-ipmi_password">IPMI Password</label>
+                        <div class="col-xs-6">
+                          <input class="form-control has-feedback" id="id_register_nodes-0-ipmi_password" name="register_nodes-0-ipmi_password" type="password">
+                          <span class="form-control-feedback glyphicon glyphicon-eye-open"></span>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Networking</legend>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-mac_addresses">NIC MAC Address</label>
+                        <div class="col-xs-6">
+                          <textarea class="form-control" cols="40" id="id_register_nodes-0-mac_addresses" name="register_nodes-0-mac_addresses" placeholder="unspecified" rows="2"></textarea>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Hardware</legend>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-cpu_arch">Architecture</label>
+                        <div class="col-xs-6">
+                          <select class="form-control" id="id_register_nodes-0-cpu_arch" name="register_nodes-0-cpu_arch">
+                            <option value="" selected="selected">unspecified</option>
+                            <option value="amd64">amd64</option>
+                            <option value="x86">x86</option>
+                            <option value="x86_64">x86_64</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-cpus">CPUs</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-0-cpus" name="register_nodes-0-cpus" placeholder="unspecified" type="number">
+                        </div>
+                        <div class="col-xs-2 muted">cores</div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-memory_mb">Memory</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-0-memory_mb" name="register_nodes-0-memory_mb" placeholder="unspecified" type="number">
+                        </div>
+                        <div class="col-xs-2 muted">MB</div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-0-local_gb">Local Disk</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-0-local_gb" name="register_nodes-0-local_gb" placeholder="unspecified" type="number">
+                        </div>
+                        <div class="col-xs-2 muted">GB</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-register_nodes-1">
+                  <h4>Node Detail</h4>
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <legend>Management</legend>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-driver">Driver</label>
+                        <div class="col-xs-6">
+                          <select class="form-control" id="id_register_nodes-1-driver" name="register_nodes-1-driver">
+                            <option value="pxe_ipmitool">IPMI Driver</option>
+                            <option value="pxe_ssh">PXE + SSH</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-ipmi_address">IP Address</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-1-ipmi_address" name="register_nodes-1-ipmi_address" type="text">
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-xs-4" for="id_register_nodes-1-ipmi_username">IPMI User</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-1-ipmi_username" name="register_nodes-1-ipmi_username" type="text">
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-xs-4" for="id_register_nodes-1-ipmi_password">IPMI Password</label>
+                        <div class="col-xs-6">
+                          <input class="form-control has-feedback" id="id_register_nodes-1-ipmi_password" name="register_nodes-1-ipmi_password" type="password">
+                          <span class="form-control-feedback glyphicon glyphicon-eye-open"></span>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Networking</legend>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-mac_addresses">NIC MAC Address</label>
+                        <div class="col-xs-6">
+                          <textarea class="form-control" cols="40" id="id_register_nodes-1-mac_addresses" name="register_nodes-1-mac_addresses" placeholder="unspecified" rows="2"></textarea>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Hardware</legend>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-cpu_arch">Architecture</label>
+                        <div class="col-xs-6">
+                          <select class="form-control" id="id_register_nodes-1-cpu_arch" name="register_nodes-1-cpu_arch">
+                            <option value="" selected="selected">unspecified</option>
+                            <option value="amd64">amd64</option>
+                            <option value="x86">x86</option>
+                            <option value="x86_64">x86_64</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-2 muted"></div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-cpus">CPUs</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-1-cpus" name="register_nodes-1-cpus" placeholder="unspecified" type="number">
+                        </div>
+                        <div class="col-xs-2 muted">cores</div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-memory_mb">Memory</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-1-memory_mb" name="register_nodes-1-memory_mb" placeholder="unspecified" type="number">
+                        </div>
+                        <div class="col-xs-2 muted">MB</div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-xs-4" for="id_register_nodes-1-local_gb">Local Disk</label>
+                        <div class="col-xs-6">
+                          <input class="form-control" id="id_register_nodes-1-local_gb" name="register_nodes-1-local_gb" placeholder="unspecified" type="number">
+                        </div>
+                        <div class="col-xs-2 muted">GB</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Register Nodes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="modal fade" id="deployment-role" tabindex="-1" role="dialog" aria-labelledby="deployment-role-label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <span class="pficon pficon-close"></span>
+          </button>
+          <h2 class="modal-title" id="deployment-role-label">Edit Deployment Role</h2>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs nav-tabs-pf" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#overall-settings" aria-controls="overall-settings" role="tab" data-toggle="tab">Overall Settings</a>
+              </li>
+              <li role="presentation">
+                <a href="#service-configuration" aria-controls="service-configuration" role="tab" data-toggle="tab">Service Configuration</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="overall-settings">
+                <div class="form-horizontal">
+                  <div class="form-group required">
+                    <label class="col-sm-4 control-label" for="overall-settings-name">Name</label>
+                    <div class="col-sm-8">
+                      <input type="text" id="overall-settings-name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overall-settings-description">Description</label>
+                    <div class="col-sm-8">
+                      <textarea rows="2" id="overall-settings-description" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group required">
+                    <label class="col-sm-4 control-label" for="overall-settings-provisioning-image">Provisioning Image</label>
+                    <div class="col-sm-8">
+                      <select id="overall-settings-provisioning-image" class="form-control selectpicker">
+                        <option value="" disabled selected>Select Provisioning Image</option>
+                        <option>Provisioning Image 1</option>
+                        <option>Provisioning Image 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overall-settings-node-profile">Node Profile</label>
+                    <div class="col-sm-8">
+                      <select id="overall-settings-node-profile" class="form-control selectpicker">
+                        <option value="" disabled selected>Select Node Profile</option>
+                        <option>Node Profile 1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overall-settings-number-of-nodes">Number of Nodes</label>
+                    <div class="col-sm-8">
+                      <input type="text" id="overall-settings-number-of-nodes" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="service-configuration">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-horizontal">
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label">
+                          Setting 1
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 1 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-1" id="service-configuration-radio-1" value="value1" checked> Value 1
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-1" id="service-configuration-radio-2" value="value2"> Value 2
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-2">
+                          Setting 2
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 2 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-2" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-3">
+                          Setting 3
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 3 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-3" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-4">
+                          Setting 4
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 4 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <select id="service-configuration-setting-4" class="form-control selectpicker">
+                            <option selected>value</option>
+                            <option>value 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-5">
+                          Setting 5
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 5 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-5" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-6">
+                          Setting 6
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 6 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-6" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-horizontal">
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label">
+                          Setting 7
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 7 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-2" id="service-configuration-radio-3" value="value1" checked> Value 1
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="service-configuration-radios-2" id="service-configuration-radio-4" value="value2"> Value 2
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-8">
+                          Setting 8
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 8 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-8" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-9">
+                          Setting 9
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 9 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-9" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-10">
+                          Setting 10
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 10 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <select id="service-configuration-setting-10" class="form-control selectpicker">
+                            <option selected>value</option>
+                            <option>value 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-11">
+                          Setting 11
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 11 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-11" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-4 control-label" for="service-configuration-setting-12">
+                          Setting 12
+                          <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 12 tooltip info"></i>
+                        </label>
+                        <div class="col-sm-8">
+                          <input type="text" id="service-configuration-setting-12" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-group" id="service-configuration-advanced-settings" role="tablist" aria-multiselectable="false">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h2 class="panel-title h5">
+                        <a data-toggle="collapse" data-parent="#service-configuration-advanced-settings" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                          Advanced Settings
+                        </a>
+                      </h2>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-horizontal">
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label">
+                                  Setting 13
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 13 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-3" id="service-configuration-radio-5" value="value1" checked> Value 1
+                                  </label>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-3" id="service-configuration-radio-6" value="value2"> Value 2
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label" for="service-configuration-setting-14">
+                                  Setting 14
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 14 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <input type="text" id="service-configuration-setting-14" class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label" for="service-configuration-setting-15">
+                                  Setting 15
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 15 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <input type="text" id="service-configuration-setting-15" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-horizontal">
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label">
+                                  Setting 16
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 16 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-4" id="service-configuration-radio-7" value="value1" checked> Value 1
+                                  </label>
+                                  <label class="radio-inline">
+                                    <input type="radio" name="service-configuration-radios-4" id="service-configuration-radio-8" value="value2"> Value 2
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="form-group required">
+                                <label class="col-sm-4 control-label" for="service-configuration-setting-17">
+                                  Setting 17
+                                  <i class="pficon pficon-help" data-toggle="tooltip" data-placement="top" title="Setting 17 tooltip info"></i>
+                                </label>
+                                <div class="col-sm-8">
+                                  <input type="text" id="service-configuration-setting-17" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+      </div>
+    </form>
   </div>
 </div>
   </body>
