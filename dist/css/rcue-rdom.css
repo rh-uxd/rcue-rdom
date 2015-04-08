@@ -10543,27 +10543,22 @@ h2,
   font-weight: 600;
 }
 .deployment-checklist #deployment-steps .complete {
+  list-style: none;
   color: #555555;
 }
 .deployment-checklist #deployment-steps .complete:before {
   color: #3f9c35;
-  content: '\f046';
-}
-.deployment-checklist #deployment-steps li {
-  list-style: none;
-  margin-bottom: 5px;
-  position: relative;
-}
-.deployment-checklist #deployment-steps li:before {
-  color: #999999;
-  content: '\f096';
+  content: '\f00c';
   font-family: "FontAwesome";
   left: -18px;
   position: absolute;
   top: 1px;
 }
+.deployment-checklist #deployment-steps li {
+  margin-bottom: 5px;
+  position: relative;
+}
 .deployment-checklist #deployment-steps ul {
-  list-style: none;
   padding-left: 6px;
   padding-top: 5px;
 }
@@ -10606,27 +10601,20 @@ h2,
 .deployment-roles {
   float: left;
   list-style: none;
-  margin: 5px 0 0;
+  margin: 0;
   padding: 0;
-  width: 100%;
 }
-.deployment-roles.deployment-roles-assigned {
-  float: none;
+.deployment-roles.deployment-roles-unassigned {
+  border: 2px dashed transparent;
+  margin-left: -12px;
+  padding-left: 12px;
+  padding-top: 10px;
 }
-.deployment-roles.deployment-roles-assigned > li {
-  float: none;
-  margin-right: 0;
-  min-width: 0;
+.deployment-roles.deployment-roles-unassigned.deployment-roles-active {
+  border-color: #888888;
 }
-.deployment-roles.deployment-roles-assigned > li:hover .role-option.delete {
-  display: block;
-}
-.deployment-roles.deployment-roles-assigned > li:hover .role-option.edit {
-  top: 17px;
-}
-.deployment-roles.deployment-roles-assigned > li .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  margin-bottom: 5px;
-  width: auto;
+.deployment-roles.deployment-roles-unassigned.deployment-roles-hover {
+  border-color: #555555;
 }
 .deployment-roles > li {
   background: #ffffff;
@@ -10650,11 +10638,28 @@ h2,
   top: 0;
   width: 0;
 }
-.deployment-roles > li:hover {
-  cursor: move;
-}
 .deployment-roles > li:hover .role-option.edit {
   display: block;
+}
+.deployment-roles > li.no-roles {
+  border: 0;
+  min-width: none;
+  padding-left: 0;
+  text-align: left;
+}
+.deployment-roles > li.no-roles:before {
+  display: none;
+}
+.deployment-roles > li.role-assigned:hover .role-option.delete {
+  display: block;
+}
+.deployment-roles > li.role-assigned:hover .role-option.edit {
+  top: 17px;
+}
+.deployment-roles > li.role-assigned .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  display: inline-block;
+  margin-bottom: 5px;
+  width: auto;
 }
 .deployment-roles > li.role-block {
   border-color: #409d35;
@@ -10684,6 +10689,23 @@ h2,
   border-left-color: #a2030d;
   border-top-color: #a2030d;
 }
+.deployment-roles > li.role-target {
+  border-style: dashed;
+  margin: 0 0 25px;
+}
+.deployment-roles > li.role-target:before {
+  display: none;
+}
+.deployment-roles > li.role-target.role-target-active {
+  border-color: #888888;
+}
+.deployment-roles > li.role-target.role-target-hover {
+  border-color: #555555;
+}
+.deployment-roles > li.role-target > a {
+  display: block;
+  text-align: center;
+}
 .deployment-roles > li.role-unconfigured {
   background-color: #f8f8f8 !important;
   border-color: #d1d1d1 !important;
@@ -10693,6 +10715,13 @@ h2,
 .deployment-roles > li.role-unconfigured:before {
   border-left-color: #d1d1d1 !important;
   border-top-color: #d1d1d1 !important;
+}
+.deployment-roles > li.ui-draggable:hover {
+  cursor: move;
+}
+.deployment-roles > li .bootstrap-select.btn-group:not(.input-group-btn),
+.deployment-roles > li .bootstrap-select.btn-group[class*=span] {
+  display: none;
 }
 .deployment-roles > li .pficon-help {
   cursor: pointer;
@@ -10715,10 +10744,6 @@ h2,
 }
 .deployment-roles > li .role-option.edit {
   top: 5px;
-}
-.deployment-roles > li select {
-  display: none;
-  margin-bottom: 5px;
 }
 .form-control.has-feedback {
   padding-right: 30px;
@@ -10907,18 +10932,6 @@ h2,
 }
 .register-nodes-formset .tab-pane > h4 + .form-horizontal {
   margin-top: 20px;
-}
-.role-target {
-  background: #ffffff;
-  border: 2px dashed #bbbbbb;
-  border-radius: 1px;
-  font-size: 16px;
-  margin: 0 0 25px;
-  padding: 3px 0;
-}
-.role-target > a {
-  display: block;
-  text-align: center;
 }
 .table-header-rotated {
   border-collapse: collapse;

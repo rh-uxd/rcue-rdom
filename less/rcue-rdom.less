@@ -33,27 +33,22 @@
       font-weight: 600;
     }
     .complete {
+      list-style: none;
       color: @gray;
       &:before {
         color: @brand-success;
-        content: '\f046';
-      }
-    }
-    li {
-      list-style: none;
-      margin-bottom: 5px;
-      position: relative;
-      &:before {
-        color: @gray-light;
-        content: '\f096';
+        content: '\f00c';
         font-family: @icon-font-name-fa;
         left: -18px;
         position: absolute;
         top: 1px;
       }
     }
+    li {
+      margin-bottom: 5px;
+      position: relative;
+    }
     ul {
-      list-style: none;
       padding-left: 6px;
       padding-top: 5px;
     }
@@ -99,29 +94,18 @@
 .deployment-roles {
   float: left;
   list-style: none;
-  margin: 5px 0 0;
+  margin: 0;
   padding: 0;
-  width: 100%;
-  &.deployment-roles-assigned {
-    float: none;
-    > li {
-      float: none;
-      margin-right: 0;
-      min-width: 0;
-      &:hover {
-        .role-option {
-          &.delete {
-            display: block;
-          }
-          &.edit {
-            top: 17px;
-          }
-        }
-      }
-      .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-        margin-bottom: 5px;
-        width: auto;
-      }
+  &.deployment-roles-unassigned {
+    border: 2px dashed transparent;
+    margin-left: -12px;
+    padding-left: 12px;
+    padding-top: 10px;
+    &.deployment-roles-active {
+      border-color: darken(@deployment-role-border-color, 20%);
+    }
+    &.deployment-roles-hover {
+      border-color: darken(@deployment-role-border-color, 40%);
     }
   }
   > li {
@@ -145,10 +129,31 @@
       top: 0;
       width: 0;
     }
-    &:hover {
-      cursor: move;
-      .role-option.edit {
-        display: block;
+    &:hover .role-option.edit {
+      display: block;
+    }
+    &.no-roles {
+      border: 0;
+      min-width: none;
+      padding-left: 0;
+      text-align: left;
+      &:before {
+        display: none;
+      }
+    }
+    &.role-assigned {
+      &:hover .role-option {
+        &.delete {
+          display: block;
+        }
+        &.edit {
+          top: 17px;
+        }
+      }
+      .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        display: inline-block;
+        margin-bottom: 5px;
+        width: auto;
       }
     }
     &.role-block {
@@ -179,6 +184,23 @@
         border-top-color: @deployment-role-object-border-color;
       }
     }
+    &.role-target {
+      border-style: dashed;
+      margin: 0 0 25px;
+      &:before {
+        display: none;
+      }
+      &.role-target-active {
+        border-color: darken(@deployment-role-border-color, 20%);
+      }
+      &.role-target-hover {
+        border-color: darken(@deployment-role-border-color, 40%);
+      }
+      > a {
+        display: block;
+        text-align: center;
+      }
+    }
     &.role-unconfigured {
       background-color: @deployment-role-unconfigured-bg-color !important;
       border-color: @deployment-role-unconfigured-border-color !important;
@@ -188,6 +210,12 @@
         border-left-color: @deployment-role-unconfigured-border-color !important;
         border-top-color: @deployment-role-unconfigured-border-color !important;
       }
+    }
+    &.ui-draggable:hover {
+      cursor: move;
+    }
+    .bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*=span] {
+      display: none;
     }
     .pficon-help {
       cursor: pointer;
@@ -210,10 +238,6 @@
       &.edit {
         top: 5px; // 15px
       }
-    }
-    select {
-      display: none;
-      margin-bottom: 5px;
     }
   }
 }
@@ -421,19 +445,6 @@
   margin-top: 5px;
   + .form-horizontal {
     margin-top: 20px;
-  }
-}
-
-.role-target {
-  background: @deployment-role-bg-color;
-  border: 2px dashed @deployment-role-border-color;
-  border-radius: @border-radius-base;
-  font-size: 16px;
-  margin: 0 0 25px;
-  padding: 3px 0;
-  > a {
-    display: block;
-    text-align: center;
   }
 }
 

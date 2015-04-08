@@ -25,21 +25,30 @@
             <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 16 GB of Memory, 2 TB of Disk</h3>
             <div class="row">
               <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles deployment-roles-assigned">
-                  <li class="role-compute">
-                    <div class="deployement-role-label">
+                <ul class="deployment-roles deployment-roles-assignable">
+                  <li class="role role-compute role-assigned">
+                    <div class="deployment-role-label">
                       Compute
                     </div>
                     <select class="selectpicker" id="role-compute-count">
                       <option>1</option>
+                      <option>2</option>
                       <option>3</option>
+                      <option>4</option>
                       <option>5</option>
+                      <option>6</option>
                       <option>7</option>
+                      <option>8</option>
                       <option>9</option>
+                      <option>10</option>
                       <option>11</option>
+                      <option>12</option>
                       <option>13</option>
+                      <option>14</option>
                       <option>15</option>
+                      <option>16</option>
                       <option selected>17</option>
+                      <option>18</option>
                       <option>19</option>
                     </select>
                     <a href="#" class="role-option delete">
@@ -48,27 +57,27 @@
                     <a href="#" class="role-option edit" data-toggle="modal" data-target="#deployment-role">
                       <i class="fa fa-pencil"></i>
                     </a>
+                  </li> 
+                  <li class="role-target dropdown">
+                    <a href="#" id="role-target-dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-plus"></i> Add Role
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-1">
+                      <li>
+                        <a href="#">Controller</a>
+                      </li>
+                      <li>
+                        <a href="#">Compute</a>
+                      </li>
+                      <li>
+                        <a href="#">Block Storage</a>
+                      </li>
+                      <li>
+                        <a href="#">Object Storage</a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
-                <div class="role-target dropdown">
-                  <a href="#" id="role-target-dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-plus"></i>
-                  </a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-1">
-                    <li>
-                      <a href="#">Controller</a>
-                    </li>
-                    <li>
-                      <a href="#">Compute</a>
-                    </li>
-                    <li>
-                      <a href="#">Block Storage</a>
-                    </li>
-                    <li>
-                      <a href="#">Object Storage</a>
-                    </li>
-                  </ul>
-                </div>
               </div>
               <div class="col-sm-7 col-md-7">
                 <ul class="nodes">
@@ -101,18 +110,15 @@
             <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 2 GB of Memory, 1 TB of Disk</h3>
             <div class="row">
               <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles deployment-roles-assigned">
-                  <li class="role-controller">
-                    <div class="deployement-role-label">
+                <ul class="deployment-roles deployment-roles-assignable">
+                  <li class="role role-controller role-assigned">
+                    <div class="deployment-role-label">
                       Controller
                     </div>
                     <select class="selectpicker" id="role-controller-count">
                       <option>1</option>
-                      <option>2</option>
                       <option>3</option>
-                      <option>4</option>
                       <option selected>5</option>
-                      <option>6</option>
                       <option>7</option>
                     </select>
                     <a href="#" class="role-option delete">
@@ -122,26 +128,26 @@
                       <i class="fa fa-pencil"></i>
                     </a>
                   </li>
+                  <li class="role-target dropdown">
+                    <a href="#" id="role-target-dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-plus"></i> Add Role
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-2">
+                      <li>
+                        <a href="#">Controller</a>
+                      </li>
+                      <li>
+                        <a href="#">Compute</a>
+                      </li>
+                      <li>
+                        <a href="#">Block Storage</a>
+                      </li>
+                      <li>
+                        <a href="#">Object Storage</a>
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
-                <div class="role-target dropdown">
-                  <a href="#" id="role-target-dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-plus"></i>
-                  </a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-2">
-                    <li>
-                      <a href="#">Controller</a>
-                    </li>
-                    <li>
-                      <a href="#">Compute</a>
-                    </li>
-                    <li>
-                      <a href="#">Block Storage</a>
-                    </li>
-                    <li>
-                      <a href="#">Object Storage</a>
-                    </li>
-                  </ul>
-                </div>
               </div>
               <div class="col-sm-7 col-md-7">
                 <ul class="nodes">
@@ -174,9 +180,9 @@
             <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 4 GB of Memory, 40 TB of Disk</h3>
             <div class="row">
               <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles deployment-roles-assigned">
-                  <li class="role-block">
-                    <div class="deployement-role-label">
+                <ul class="deployment-roles deployment-roles-assignable">
+                  <li class="role role-block role-assigned">
+                    <div class="deployment-role-label">
                       Block Storage
                     </div>
                     <select class="selectpicker" id="role-block-count">
@@ -193,8 +199,8 @@
                       <i class="fa fa-pencil"></i>
                     </a>
                   </li>
-                  <li class="role-object">
-                    <div class="deployement-role-label">
+                  <li class="role role-object role-assigned">
+                    <div class="deployment-role-label">
                       Object Storage
                     </div>
                     <select class="selectpicker" id="role-object-count">
@@ -210,26 +216,26 @@
                       <i class="fa fa-pencil"></i>
                     </a>
                   </li>
+                  <li class="role-target dropdown">
+                    <a href="#" id="role-target-dropdown-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-plus"></i> Add Role
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-3">
+                      <li>
+                        <a href="#">Controller</a>
+                      </li>
+                      <li>
+                        <a href="#">Compute</a>
+                      </li>
+                      <li>
+                        <a href="#">Block Storage</a>
+                      </li>
+                      <li>
+                        <a href="#">Object Storage</a>
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
-                <div class="role-target dropdown">
-                  <a href="#" id="role-target-dropdown-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-plus"></i>
-                  </a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-3">
-                    <li>
-                      <a href="#">Controller</a>
-                    </li>
-                    <li>
-                      <a href="#">Compute</a>
-                    </li>
-                    <li>
-                      <a href="#">Block Storage</a>
-                    </li>
-                    <li>
-                      <a href="#">Object Storage</a>
-                    </li>
-                  </ul>
-                </div>
               </div>
               <div class="col-sm-7 col-md-7">
                 <ul class="nodes">

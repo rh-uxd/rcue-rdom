@@ -92,7 +92,6 @@
       </div>
       <div class="col-sm-5 col-md-4 buttons">
         <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#register-nodes"><i class="fa fa-plus"></i> Register Nodes</a>
-        <a class="btn btn-default disabled" href="#" role="button">Configure Networks</a>
       </div>
     </div>
       <div class="row">
@@ -104,13 +103,12 @@
               <p class="deployment-steps-status"><a data-toggle="collapse" href="#deployment-steps" aria-expanded="true" aria-controls="deployment-steps">0 of 4 Steps Completed</a></p>
               <ul id="deployment-steps" class="collapse in">
                 <li class="active">Register Nodes</li>
-                <li>Configure Networks</li>
                 <li>Configure Roles</li>
                 <li>Assign Roles
                   <ul>
                     <li>1 Controller Needed</li>
                     <li>1 Compute Needed</li>
-                    <li>1 Storage Needed</li>
+                    <li>1 Block Storage Needed</li>
                   </ul>
                 </li>
               </ul>
@@ -118,12 +116,12 @@
             </div>
           </div>
           <h2>Available Deployment Roles</h2>
-          <ul class="deployment-roles">
-            <li class="role-controller">
-              <div class="deployement-role-label">
+          <ul class="deployment-roles deployment-roles-unassigned">
+            <li class="role role-controller">
+              <div class="deployment-role-label">
                 Controller
               </div>
-              <select id="role-controller-count">
+              <select class="selectpicker" id="role-controller-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -139,11 +137,11 @@
                 <i class="fa fa-pencil"></i>
               </a>
             </li>
-            <li class="role-compute">
-              <div class="deployement-role-label">
+            <li class="role role-compute">
+              <div class="deployment-role-label">
                 Compute
               </div>
-              <select id="role-compute-count">
+              <select class="selectpicker" id="role-compute-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -164,11 +162,11 @@
                 <i class="fa fa-pencil"></i>
               </a>
             </li>
-            <li class="role-block">
-              <div class="deployement-role-label">
+            <li class="role role-block">
+              <div class="deployment-role-label">
                 Block Storage
               </div>
-              <select id="role-block-count">
+              <select class="selectpicker" id="role-block-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -183,12 +181,12 @@
               </a>
             </li>
             <!--/ remove 'role-unconfigured' class and i.pficon-help once configured -->
-            <li class="role-object role-unconfigured">
+            <li class="role role-object role-unconfigured">
               <i class="pficon pficon-help" data-toggle="tooltip" data-placement="bottom" title="Please edit this role to fill out any necessary missing configuration."></i>
-              <div class="deployement-role-label">
+              <div class="deployment-role-label">
                 Object Storage
               </div>
-              <select id="role-object-count">
+              <select class="selectpicker" id="role-object-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -209,7 +207,7 @@
         <div class="col-sm-6 col-md-6">
           <h2>Hardware</h2>
           <div class="node-profile clearfix">
-            <h3 class="h5">Discovering</h3>
+            <h3 class="h5">Discovering Nodes</h3>
             <ul class="nodes">
               <li class="node node-discovering">
                 <div class="spinner spinner-sm"></div>

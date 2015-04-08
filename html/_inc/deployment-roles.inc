@@ -1,10 +1,10 @@
           <h2>Available Deployment Roles</h2>
-          <ul class="deployment-roles">
-            <li class="role-controller">
-              <div class="deployement-role-label">
+          <ul class="deployment-roles deployment-roles-unassigned">
+            <li class="role role-controller">
+              <div class="deployment-role-label">
                 Controller
               </div>
-              <select id="role-controller-count">
+              <select class="selectpicker" id="role-controller-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -20,11 +20,11 @@
                 <i class="fa fa-pencil"></i>
               </a>
             </li>
-            <li class="role-compute">
-              <div class="deployement-role-label">
+            <li class="role role-compute">
+              <div class="deployment-role-label">
                 Compute
               </div>
-              <select id="role-compute-count">
+              <select class="selectpicker" id="role-compute-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -45,11 +45,11 @@
                 <i class="fa fa-pencil"></i>
               </a>
             </li>
-            <li class="role-block">
-              <div class="deployement-role-label">
+            <li class="role role-block">
+              <div class="deployment-role-label">
                 Block Storage
               </div>
-              <select id="role-block-count">
+              <select class="selectpicker" id="role-block-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -64,12 +64,12 @@
               </a>
             </li>
             <!--/ remove 'role-unconfigured' class and i.pficon-help once configured -->
-            <li class="role-object role-unconfigured">
+            <li class="role role-object role-unconfigured">
               <i class="pficon pficon-help" data-toggle="tooltip" data-placement="bottom" title="Please edit this role to fill out any necessary missing configuration."></i>
-              <div class="deployement-role-label">
+              <div class="deployment-role-label">
                 Object Storage
               </div>
-              <select id="role-object-count">
+              <select class="selectpicker" id="role-object-count">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

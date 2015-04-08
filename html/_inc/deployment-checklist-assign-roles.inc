@@ -5,13 +5,12 @@
               <p class="deployment-steps-status"><a data-toggle="collapse" href="#deployment-steps" aria-expanded="true" aria-controls="deployment-steps">3 of 4 Steps Completed</a></p>
               <ul id="deployment-steps" class="collapse in">
                 <li class="complete">Register Nodes</li>
-                <li class="complete">Configure Networks</li>
                 <li class="complete">Configure Roles</li>
                 <li class="active">Assign Roles
                   <ul>
                     <li>1 Controller Needed</li>
                     <li>1 Compute Needed</li>
-                    <li>1 Storage Needed</li>
+                    <li>1 Block Storage Needed</li>
                   </ul>
                 </li>
               </ul>

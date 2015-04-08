@@ -5,6 +5,5 @@
       </div>
       <div class="col-sm-5 col-md-4 buttons">
         <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#register-nodes"><i class="fa fa-plus"></i> Register Nodes</a>
-        <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#configure-networks">Configure Networks</a>
       </div>
     </div>
