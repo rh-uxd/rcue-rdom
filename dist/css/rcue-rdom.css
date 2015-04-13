@@ -10611,10 +10611,10 @@ h2,
   padding-top: 10px;
 }
 .deployment-roles.deployment-roles-unassigned.deployment-roles-active {
-  border-color: #888888;
+  border-color: #7b7b7b;
 }
 .deployment-roles.deployment-roles-unassigned.deployment-roles-hover {
-  border-color: #555555;
+  border-color: #3b3b3b;
 }
 .deployment-roles > li {
   background: #ffffff;
@@ -10697,10 +10697,10 @@ h2,
   display: none;
 }
 .deployment-roles > li.role-target.role-target-active {
-  border-color: #888888;
+  border-color: #7b7b7b;
 }
 .deployment-roles > li.role-target.role-target-hover {
-  border-color: #555555;
+  border-color: #3b3b3b;
 }
 .deployment-roles > li.role-target > a {
   display: block;
