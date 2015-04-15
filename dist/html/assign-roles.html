@@ -203,133 +203,175 @@
       </div><!-- /row -->
       <div class="row">
         <div class="col-sm-6 col-md-6">
-          <h2>Hardware</h2>
-          <div class="node-profile">
-            <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 16 GB of Memory, 2 TB of Disk</h3>
-            <div class="row">
-              <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles">
-                  <li class="role-target dropdown">
-                    <a href="#" id="role-target-dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-plus"></i> Add Role
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-1">
-                      <li>
-                        <a href="#">Controller</a>
-                      </li>
-                      <li>
-                        <a href="#">Compute</a>
-                      </li>
-                      <li>
-                        <a href="#">Block Storage</a>
-                      </li>
-                      <li>
-                        <a href="#">Object Storage</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+          <h2>Node Profiles</h2>
+          <div class="panel panel-default node-profile">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h3 class="node-profile-label h5">My_Systems_Over_Here</h3>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="node-profile-free-nodes h5">Free Nodes: 19</h4>
+                </div>
               </div>
-              <div class="col-sm-7 col-md-7">
-                <ul class="nodes">
-                  <li class="node node-free">
-                    <div class="node node-free"></div>
-                    <div class="node node-free">
-                      <div class="node-label">
-                        Free
-                      </div>
-                      <div class="node-count">
-                        19 Nodes
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h4 class="h5">Each node has:</h4>
+                  <table class="table node-specs">
+                    <tr>
+                      <th>CPU</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>RAM</th>
+                      <td>16 GB</td>
+                    </tr>
+                    <tr>
+                      <th>Disk</th>
+                      <td>2 TB</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="h5">Assigned Roles</h4>
+                  <ul class="deployment-roles deployment-roles-assignable">
+                    <li class="role-target dropdown">
+                      <a href="#" id="role-target-dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-plus"></i> Assign Role
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-1">
+                        <li>
+                          <a href="#">Controller</a>
+                        </li>
+                        <li>
+                          <a href="#">Compute</a>
+                        </li>
+                        <li>
+                          <a href="#">Block Storage</a>
+                        </li>
+                        <li>
+                          <a href="#">Object Storage</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div class="node-profile">
-            <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 2 GB of Memory, 1 TB of Disk</h3>
-            <div class="row">
-              <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles">
-                  <li class="role-target dropdown">
-                    <a href="#" id="role-target-dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-plus"></i> Add Role
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-2">
-                      <li>
-                        <a href="#">Controller</a>
-                      </li>
-                      <li>
-                        <a href="#">Compute</a>
-                      </li>
-                      <li>
-                        <a href="#">Block Storage</a>
-                      </li>
-                      <li>
-                        <a href="#">Object Storage</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+          <div class="panel panel-default node-profile">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h3 class="node-profile-label h5">My_Systems_Over_Here</h3>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="node-profile-free-nodes h5">Free Nodes: 7</h4>
+                </div>
               </div>
-              <div class="col-sm-7 col-md-7">
-                <ul class="nodes">
-                  <li class="node node-free">
-                    <div class="node node-free"></div>
-                    <div class="node node-free">
-                      <div class="node-label">
-                        Free
-                      </div>
-                      <div class="node-count">
-                        7 Nodes
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h4 class="h5">Each node has:</h4>
+                  <table class="table node-specs">
+                    <tr>
+                      <th>CPU</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>RAM</th>
+                      <td>2 GB</td>
+                    </tr>
+                    <tr>
+                      <th>Disk</th>
+                      <td>1 TB</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="h5">Assigned Roles</h4>
+                  <ul class="deployment-roles deployment-roles-assignable">
+                    <li class="role-target dropdown">
+                      <a href="#" id="role-target-dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-plus"></i> Assign Role
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-2">
+                        <li>
+                          <a href="#">Controller</a>
+                        </li>
+                        <li>
+                          <a href="#">Compute</a>
+                        </li>
+                        <li>
+                          <a href="#">Block Storage</a>
+                        </li>
+                        <li>
+                          <a href="#">Object Storage</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div class="node-profile">
-            <h3 class="h5"><strong>Node Profile:</strong> 1 CPU, 4 GB of Memory, 40 TB of Disk</h3>
-            <div class="row">
-              <div class="col-sm-5 col-md-5">
-                <ul class="deployment-roles">
-                  <li class="role-target dropdown">
-                    <a href="#" id="role-target-dropdown-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-plus"></i> Add Role
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-3">
-                      <li>
-                        <a href="#">Controller</a>
-                      </li>
-                      <li>
-                        <a href="#">Compute</a>
-                      </li>
-                      <li>
-                        <a href="#">Block Storage</a>
-                      </li>
-                      <li>
-                        <a href="#">Object Storage</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+          <div class="panel panel-default node-profile">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h3 class="node-profile-label h5">My_Systems_Over_Here</h3>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="node-profile-free-nodes h5">Free Nodes: 6</h4>
+                </div>
               </div>
-              <div class="col-sm-7 col-md-7">
-                <ul class="nodes">
-                  <li class="node node-free">
-                    <div class="node node-free"></div>
-                    <div class="node node-free">
-                      <div class="node-label">
-                        Free
-                      </div>
-                      <div class="node-count">
-                        6 Nodes
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h4 class="h5">Each node has:</h4>
+                  <table class="table node-specs">
+                    <tr>
+                      <th>CPU</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>RAM</th>
+                      <td>4 GB</td>
+                    </tr>
+                    <tr>
+                      <th>Disk</th>
+                      <td>40 TB</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="h5">Assigned Roles</h4>
+                  <ul class="deployment-roles deployment-roles-assignable">
+                    <li class="role-target dropdown">
+                      <a href="#" id="role-target-dropdown-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-plus"></i> Assign Role
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="role-target-dropdown-3">
+                        <li>
+                          <a href="#">Controller</a>
+                        </li>
+                        <li>
+                          <a href="#">Compute</a>
+                        </li>
+                        <li>
+                          <a href="#">Block Storage</a>
+                        </li>
+                        <li>
+                          <a href="#">Object Storage</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

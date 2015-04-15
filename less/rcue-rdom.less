@@ -16,6 +16,7 @@
   position: absolute;
   right: 0;
   top: -5px;
+  z-index: 9999;
   @media (min-width: 1010px) {
     &.affix {
       position: fixed;
@@ -93,6 +94,7 @@
 
 .deployment-roles {
   float: left;
+  font-weight: 600;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -119,20 +121,23 @@
     position: relative;
     text-align: center;
     &:before {
-      border: 6px solid @deployment-role-border-color;
-      border-bottom-color: transparent;
-      border-right-color: transparent;
+      background-image: linear-gradient(to bottom, @deployment-role-border-color 60%, #fff 0%);
+      background-position: left;
+      background-repeat: repeat-y;
+      background-size: 2px 5px;
+      border: 4px solid @deployment-role-border-color;
+      bottom: 1px;
       content: '';
-      height: 0;
-      left: 0;
+      left: 1px;
       position: absolute;
-      top: 0;
-      width: 0;
+      top: 1px;
+      width: 10px;
     }
     &:hover .role-option.edit {
       display: block;
     }
     &.no-roles {
+      background: transparent;
       border: 0;
       min-width: none;
       padding-left: 0;
@@ -142,51 +147,74 @@
       }
     }
     &.role-assigned {
+      float: none;
       &:hover .role-option {
+        right: 5px;
         &.delete {
           display: block;
         }
         &.edit {
-          top: 17px;
+          top: 15px;
         }
       }
-      .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-        display: inline-block;
-        margin-bottom: 5px;
-        width: auto;
+      .bootstrap-select {
+        display: inline-block !important;
+        margin-bottom: 4px;
+        width: auto !important;
+      }
+      .deployment-role-label {
+        color: #fff;
+      }
+      .role-option {
+        color: #fff;
+        &:hover {
+          color: darken(#fff, 10%);
+        }
       }
     }
     &.role-block {
       border-color: @deployment-role-block-border-color;
       &:before {
-        border-left-color: @deployment-role-block-border-color;
-        border-top-color: @deployment-role-block-border-color;
+        background-image: linear-gradient(to bottom, @deployment-role-block-border-color 60%, #fff 0%);
+        border-color: @deployment-role-block-border-color;
+      }
+      &.role-assigned {
+        background: @node-block-bg-color;
       }
     }
     &.role-compute {
       border-color: @deployment-role-compute-border-color;
       &:before {
-        border-left-color: @deployment-role-compute-border-color;
-        border-top-color: @deployment-role-compute-border-color;
+        background-image: linear-gradient(to bottom, @deployment-role-compute-border-color 60%, #fff 0%);
+        border-color: @deployment-role-compute-border-color;
+      }
+      &.role-assigned {
+        background: @node-compute-bg-color;
       }
     }
     &.role-controller {
       border-color: @deployment-role-controller-border-color;
       &:before {
-        border-left-color: @deployment-role-controller-border-color;
-        border-top-color: @deployment-role-controller-border-color;
+        background-image: linear-gradient(to bottom, @deployment-role-controller-border-color 60%, #fff 0%);
+        border-color: @deployment-role-controller-border-color;
+      }
+      &.role-assigned {
+        background: @node-controller-bg-color;
       }
     }
     &.role-object {
       border-color: @deployment-role-object-border-color;
       &:before {
-        border-left-color: @deployment-role-object-border-color;
-        border-top-color: @deployment-role-object-border-color;
+        background-image: linear-gradient(to bottom, @deployment-role-object-border-color 60%, #fff 0%);
+        border-color: @deployment-role-object-border-color;
+      }
+      &.role-assigned {
+        background: @node-object-bg-color;
       }
     }
     &.role-target {
       border-style: dashed;
-      margin: 0 0 25px;
+      margin: 0;
       &:before {
         display: none;
       }
@@ -207,15 +235,14 @@
       color: @deployment-role-unconfigured-color !important;
       cursor: auto;
       &:before {
-        border-left-color: @deployment-role-unconfigured-border-color !important;
-        border-top-color: @deployment-role-unconfigured-border-color !important;
+        display: none;
       }
     }
     &.ui-draggable:hover {
       cursor: move;
     }
-    .bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*=span] {
-      display: none;
+    .bootstrap-select {
+      display: none !important;
     }
     .pficon-help {
       cursor: pointer;
@@ -233,10 +260,10 @@
       position: absolute;
       right: 10px;
       &.delete {
-        top: 0;
+        top: -2px;
       }
       &.edit {
-        top: 5px; // 15px
+        top: 4px;
       }
     }
   }
@@ -317,128 +344,42 @@
 }
 
 .node-profile {
-  background: @node-profile-bg-color;
-  border: 1px solid @node-profile-border-color;
-  border-radius: @border-radius-base;
-  margin: 0 0 20px;
-  padding: 15px;
-  h3 {
-    margin-bottom: 20px;
+  &.nodes-coalescing {
+    color: @gray-light;
+    .node-profile-label {
+      color: @gray-light;
+    }
+  }
+  .h5 {
     margin-top: 0;
-    strong {
-      font-weight: 600;
-    }
+  }
+  .panel-heading .h5 {
+    margin-bottom: 0;
   }
 }
 
-.node {
-  border-style: solid;
-  border-radius: @border-radius-base;
-  border-width: 2px;
-  float: left;
-  margin: 0 50px 70px 0;
-  min-height: 75px;
-  min-width: 75px;
-  padding: 25px 0;
-  position: relative;
-  text-align: center;
-  z-index: 1;
-  &:before {
-    border: 6px solid transparent;
-    content: '';
-    height: 0;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 0;
-  }
-  &.node-block {
-    background: @node-block-bg-color;
-    border-color: @node-block-border-color;
-    &:before {
-      border-left-color: @node-block-border-color;
-      border-top-color: @node-block-border-color;
+.node-specs {
+  width: auto;
+  tbody, thead {
+    > tr {
+      > td, > th {
+        border-top: 0;
+        padding: 0 10px 0 0;
+      }
+      > th {
+        padding-top: 1px;
+      }
     }
   }
-  &.node-compute {
-    background: @node-compute-bg-color;
-    border-color: @node-compute-border-color;
-    &:before {
-      border-left-color: @node-compute-border-color;
-      border-top-color: @node-compute-border-color;
-    }
-  }
-  &.node-controller {
-    background: @node-controller-bg-color;
-    border-color: @node-controller-border-color;
-    &:before {
-      border-left-color: @node-controller-border-color;
-      border-top-color: @node-controller-border-color;
-    }
-  }
-  &.node-discovering {
-    background: @node-discovering-bg-color;
-    border-color: @node-discovering-border-color;
-    padding: 16px 0;
-    margin: 0 10px 10px 0;
-    &:before {
-      border-left-color: @node-discovering-border-color;
-      border-top-color: @node-discovering-border-color;
-    }
-    .node-label {
-      color: @gray;
-      font-size: @font-size-small;
-      font-weight: 500;
-    }
-  }
-  &.node-free {
-    background: @node-free-bg-color;
-    border-color: @node-free-border-color;
-    &:before {
-      border-left-color: @node-free-border-color;
-      border-top-color: @node-free-border-color;
-    }
-  }
-  &.node-object {
-    background: @node-object-bg-color;
-    border-color: @node-object-border-color;
-    &:before {
-      border-left-color: @node-object-border-color;
-      border-top-color: @node-object-border-color;
-    }
-  }
-  .node-count {
-    bottom: -26px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
-  .node-label {
-    color: #fff;
-    font-weight: 600;
-  }
-  > .node {
-    left: 8px;
-    position: absolute;
-    top: 8px;
-    z-index: 2;
-    + .node {
-      left: 18px;
-      top: 18px;
-      z-index: 3;
-    }
-  }
-}
-
-.nodes {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nodes-registered-count {
   margin: 0;
   padding: 5px 0 0;
+}
+
+.progress-description .tooltip {
+  white-space: normal;
 }
 
 .register-nodes-formset .tab-pane > h4 {

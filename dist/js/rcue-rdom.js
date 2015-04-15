@@ -6,7 +6,7 @@ jQuery(function () {
   // Initialize Boostrap-select
   jQuery('.selectpicker').selectpicker();
   // Make configured deployment roles draggable
-  jQuery('.deployment-roles-assignable li:not(.role-unconfigured)').draggable({
+  jQuery('.deployment-roles-assignable li:not(.role-unconfigured, .no-roles)').draggable({
     helper: 'clone',
     opacity: .75,
     revert: 'invalid',

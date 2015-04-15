@@ -20,59 +20,58 @@
       </div><!-- /row -->
       <div class="row">
         <div class="col-sm-6 col-md-6">
-          <h2>Hardware</h2>
-          <div class="node-profile clearfix">
-            <h3 class="h5">Discovering Nodes</h3>
-            <ul class="nodes">
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
+          <h2>Registering Nodes</h2>
+          <div class="progress-description">
+            <span class="pficon-layered" data-toggle="tooltip" data-placement="top" title="Node_abc was not registered: node password not valid. Node_xyz was not registered: node IP address not valid.">
+              <span class="pficon pficon-error-octagon"></span>
+              <span class="pficon pficon-error-exclamation"></span>
+            </span> 
+            <strong>Error:</strong>  2 nodes not registered
+          </div>
+          <div class="progress progress-label-top-right">
+            <div class="progress-bar" role="progressbar" aria-valuenow="33.3%" aria-valuemin="0" aria-valuemax="100" style="width: 33.3%;">
+              <span>33.3% (12 of 36)</span>
+            </div>
+          </div>
+          <form >
+            <button class="btn btn-default" type="submit">Cancel</button>
+          </form>
+          <h3>Coalescing Node Profiles</h3>
+          <div class="panel panel-default node-profile nodes-coalescing">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h3 class="node-profile-label h5">My_Systems_Over_Here</h3>
                 </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
+                <div class="col-sm-7 col-md-8">
+                  <h4 class="node-profile-free-nodes h5">Free Nodes: 10</h4>
                 </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <h4 class="h5">Each node has:</h4>
+                  <table class="table node-specs">
+                    <tr>
+                      <th>CPU</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>RAM</th>
+                      <td>16 GB</td>
+                    </tr>
+                    <tr>
+                      <th>Disk</th>
+                      <td>2 TB</td>
+                    </tr>
+                  </table>
                 </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
+                <div class="col-sm-7 col-md-8">
+                  <em>Roles can be assigned once coalescing completes</em>
                 </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
-                </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
-                </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
-                </div>
-              </li>
-              <li class="node node-discovering">
-                <div class="spinner spinner-sm"></div>
-                <div class="node-label">
-                  Discovering
-                </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-5">
