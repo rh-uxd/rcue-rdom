@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "jquery-ui": "~1.11.4",
-    "rcue": "/Users/rhamilto/Sites/rcue"
+    "rcue": "/Users/rhamilto/Sites/rcue",
+    "matchmedia": "~0.2.0"
   }
 }

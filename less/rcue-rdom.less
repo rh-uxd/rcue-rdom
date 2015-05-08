@@ -4,7 +4,7 @@
 @import "../bower_components/rcue/less/rcue.less";
 
 // RCUE overrides
-@import "variables"; 
+@import "variables.less"; 
 
 
 .deployment-checklist {
@@ -16,7 +16,7 @@
   position: absolute;
   right: 0;
   top: -5px;
-  z-index: 9999;
+  z-index: 999;
   @media (min-width: 1010px) {
     &.affix {
       position: fixed;
@@ -378,8 +378,83 @@
   padding: 5px 0 0;
 }
 
+.page-header-rhci {
+  background: @sidebar-pf-bg;
+  border-bottom-color: @sidebar-pf-border-color;
+  float: left;
+  margin-bottom: -1px;
+  margin-top: 0;
+  width: 100%;
+}
+
 .progress-description .tooltip {
   white-space: normal;
+}
+
+.rhci-steps {
+  color: @gray-light;
+  font-size: @font-size-large + 1;
+  float: left;
+  list-style-position: inside;
+  margin: 0 0 10px -@grid-gutter-width/2;
+  padding: 0;
+  position: relative;
+  li {
+    float: left;
+    margin: 0;
+    padding: 30px @grid-gutter-width/2 0;
+    position: relative;
+    &:after {
+      background: @sidebar-pf-border-color;
+      border-radius: 20px;
+      content: '';
+      height: 8px;
+      left: 50%;
+      margin-left: -4px;
+      position: absolute;
+      top: 16px;
+      width: 8px;
+    }
+    &:before {
+      border-top: 1px solid @sidebar-pf-border-color;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: @grid-gutter-width/2;
+      width: 100%;
+    }
+    &:last-child:before {
+      width: 50%;
+    }
+    &.active {
+      color: @rhci-steps-active-color;
+      &:after {
+        background-color: @rhci-steps-active-color;
+      }
+    }
+    &.completed {
+      color: @gray;
+      &:after {
+        background-color: @gray-light;
+      }
+    }
+  }
+}
+
+.rhci-steps-buttons {
+  margin-bottom: @grid-gutter-width/2;
+  margin-top: @grid-gutter-width/2;
+  text-align: right;
+  .btn {
+    margin-left: 5px;
+    > .fa-angle-left {
+      margin-right: 5px;
+    }
+    > .fa-angle-right {
+      margin-left: 5px;
+    }
+  }
 }
 
 .register-nodes-formset .tab-pane > h4 {
