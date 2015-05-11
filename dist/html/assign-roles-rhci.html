@@ -48,11 +48,17 @@
   <script>
     (function($) {
       sidebar = function() {
+        var documentHeight = 0;
+        var navbarpfHeight = 0;
+        var pageheaderrhciHeight = 0;
         var rowHeight = 0;
-        rowHeight = $('.sidebar-pf').parent('.row').outerHeight();
         if ($('.sidebar-pf').length > 0 && matchMedia('only screen and (min-width: 768px)').matches) {
-          $('.sidebar-pf').parent('.row').children('[class*="col-"]').css({ "min-height":rowHeight});
+          documentHeight = $(document).height();
+          navbarpfHeight = $('.navbar-pf').outerHeight();
+          pageheaderrhciHeight = $('.page-header-rhci').outerHeight();
+          rowHeight = documentHeight - navbarpfHeight - pageheaderrhciHeight;
         }
+        $('.sidebar-pf').parent('.row').children('[class*="col-"]').css({ "min-height":rowHeight});
       }
       $(window).resize(function() {
         sidebar();
@@ -61,7 +67,7 @@
   </script>
   </head>
   <body>
-    <nav class="navbar-rhci" role="navigation">
+    <nav class="navbar navbar-pf navbar-rhci" role="navigation">
       <!-- this is a fake navbar for the purposes of this mockup -->
     </nav>
     <div class="container-fluid">
